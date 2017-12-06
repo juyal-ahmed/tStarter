@@ -1,0 +1,116 @@
+/*
+-----------------------------------------------------------------------------------
+Theme Name: Titan TR Starter Theme
+Theme URI: https://demo.themeredesign.com/titan-tr-starter
+Author: Themeana
+Author URI: https://themeana.com
+Description: Titan WordPress framework starter theme based on bootstrap and other multi skin support.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: youtha
+Tags: custom-menu, editor-style, featured-images, post-formats, sticky-post, theme-options, translation-ready
+-----------------------------------------------------------------------------------
+*/
+
+/*
+-----------------------------------------------------------------------------------
+
+    @media (max-width: @screen-xs-max) { ... } Extra small devices Phones (<768px)
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... } Small devices Tablets (>=768px)
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... } Medium devices Desktops (>=992px)
+    @media (min-width: @screen-lg-min) { ... } Large devices Desktops (>=1200px)
+
+-----------------------------------------------------------------------------------
+    DEFAULT IN THIS FILE
+-----------------------------------------------------------------------------------
+    https://logomakr.com/2n1N6i
+    https://coolors.co/e3c9c7-a9cbb7-ffffff-ff934f-5e565a
+    Theme Base Color: #a9cbb7;
+    Theme Base Color RGBA: rgba(93, 160, 195);
+    Theme Body Text Color: #707070;
+
+-----------------------------------------------------------------------------------
+    TABLE OF CONTENTS
+-----------------------------------------------------------------------------------
+
+	1. Including Web Fonts
+    2. CSS Reset - http://meyerweb.com/eric/tools/css/reset/
+    3. Globally Applied Styles
+    4. Header Styles and Menu Styles
+    5. Blog Header with featured image
+
+-----------------------------------------------------------------------------------
+*/
+
+/*
+-----------------------------------------------------------------------------------
+    1. Including Web Fonts
+-----------------------------------------------------------------------------------
+*/
+@font-face {
+	font-family: 'OpenSansLight';
+	src: url('assets/fonts/OpenSans/OpenSans-Light-webfont.eot');
+	src: url('assets/fonts/OpenSans/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+	url('assets/fonts/OpenSans/OpenSans-Light-webfont.woff') format('woff'),
+	url('assets/fonts/OpenSans/OpenSans-Light-webfont.ttf') format('truetype'),
+	url('assets/fonts/OpenSans/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OpenSansRegular';
+	src: url('assets/fonts/OpenSans/OpenSans-Regular-webfont.eot');
+	src: url('assets/fonts/OpenSans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('assets/fonts/OpenSans/OpenSans-Regular-webfont.woff') format('woff'),
+	url('assets/fonts/OpenSans/OpenSans-Regular-webfont.ttf') format('truetype'),
+	url('assets/fonts/OpenSans/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OpenSansSemibold';
+	src: url('assets/fonts/OpenSans/OpenSans-Semibold-webfont.eot');
+	src: url('assets/fonts/OpenSans/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('assets/fonts/OpenSans/OpenSans-Semibold-webfont.woff') format('woff'),
+	url('assets/fonts/OpenSans/OpenSans-Semibold-webfont.ttf') format('truetype'),
+	url('assets/fonts/OpenSans/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OpenSansBold';
+	src: url('assets/fonts/OpenSans/OpenSans-Bold-webfont.eot');
+	src: url('assets/fonts/OpenSans/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('assets/fonts/OpenSans/OpenSans-Bold-webfont.woff') format('woff'),
+	url('assets/fonts/OpenSans/OpenSans-Bold-webfont.ttf') format('truetype'),
+	url('assets/fonts/OpenSans/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*
+-----------------------------------------------------------------------------------
+    2. CSS Reset - http://meyerweb.com/eric/tools/css/reset/
+-----------------------------------------------------------------------------------
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, :focus { outline: 0 !important; border: 0; }
+
+/*
+-----------------------------------------------------------------------------------
+    3. Globally Applied Styles
+-----------------------------------------------------------------------------------
+*/
+
+body {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'OpenSansRegular';
+	line-height: 26px;
+	/*background: rgba(246, 249, 252, 1);*/
+}
+
