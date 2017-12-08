@@ -39,25 +39,11 @@ $is_sidebar_widgets_loaded = false;
 if (!$is_sidebar_widgets_loaded) { ?>
 
     <!--BEGIN Static Sidebar Widgets-->
-    <?php
-    //Widgets general settings
-    $args = array(
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div><div class="widget-divider"></div>',
-        'before_title' => '<h3 class="widget-title widetext">',
-        'after_title' => '</h3><div class="clearfix"></div>'
-    );
-    ?>
-    <?php the_widget('WP_Widget_Recent_Posts', array(), $args); ?>
-    <div class="clearfix"></div>
-    <?php the_widget('WP_Widget_Recent_Comments', array(), $args); ?>
-    <div class="clearfix"></div>
-    <?php the_widget('WP_Widget_Archives', array(), $args); ?>
-    <div class="clearfix"></div>
-    <?php the_widget('WP_Widget_Categories', array(), $args); ?>
-    <div class="clearfix"></div>
-    <?php the_widget('WP_Widget_Meta', array(), $args); ?>
-    <div class="clearfix"></div>
+    <?php the_widget('WP_Widget_Recent_Posts'); ?>
+    <?php the_widget('WP_Widget_Recent_Comments'); ?>
+    <?php the_widget('WP_Widget_Archives'); ?>
+    <?php the_widget('WP_Widget_Categories'); ?>
+    <?php the_widget('WP_Widget_Meta'); ?>
     <!--END Static Sidebar Widgets-->
 
 <?php } ?>

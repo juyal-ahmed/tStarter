@@ -13,6 +13,7 @@ if ( ! function_exists( 'youtha_setup' ) ) {
         add_theme_support( 'automatic-feed-links' );
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
+        add_editor_style( 'editor-style.css' );
         register_nav_menus( array(
             'primary' => esc_html__( 'Primary Menu', 'youtha' ),
         ) );
@@ -28,6 +29,7 @@ if ( ! function_exists( 'youtha_setup' ) ) {
         add_theme_support( 'post-formats', array(
             'aside',
             'image',
+            'gallery',
             'video',
             'quote',
             'link',

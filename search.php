@@ -30,7 +30,7 @@ get_header();
                     <div class="row item-navbar-row">
                         <div class="col-sm-12">
                             <h2 class="entry-title">
-                                <?php _e('Search results for:', LANG_DOMAIN) ?><?php echo $search_text; ?>
+                                <?php _e('Search results for:', TRTHEME_LANG_DOMAIN) ?><?php echo $search_text; ?>
                             </h2>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ get_header();
                     <div class="col-lg-12">
 
                         <div class="entry-content">
-                            <p class="page-sub-head"><?php echo sprintf(_n('Total <span>%d</span> result found', 'Total <span>%d</span> results found', $found_posts, LANG_DOMAIN), $found_posts); ?><?php _e('/', LANG_DOMAIN); ?><?php echo sprintf(__("You are on page %d of %d", LANG_DOMAIN), $paged, $total_page); ?></p>
+                            <p class="page-sub-head"><?php echo sprintf(_n('Total <span>%d</span> result found', 'Total <span>%d</span> results found', $found_posts, TRTHEME_LANG_DOMAIN), $found_posts); ?><?php _e('/', TRTHEME_LANG_DOMAIN); ?><?php echo sprintf(__("You are on page %d of %d", TRTHEME_LANG_DOMAIN), $paged, $total_page); ?></p>
 
 
                             <div class="row">
@@ -54,7 +54,7 @@ get_header();
                                             <span class="input-group-addon"><span
                                                         class="glyphicon glyphicon-search"></span></span>
                                             <input type="text"
-                                                   placeholder="<?php _e('Type Your Search Keywords', LANG_DOMAIN); ?>"
+                                                   placeholder="<?php _e('Type Your Search Keywords', TRTHEME_LANG_DOMAIN); ?>"
                                                    name="s" value="<?php echo $search_text; ?>" title="Search for:"
                                                    class="form-control search-field input-lg" id="s">
                                             <span class="input-group-btn">

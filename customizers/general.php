@@ -17,7 +17,7 @@ function trtheme_general_theme_customizers() {
     $theme_customizer->createOption( array(
         'name' => __( 'Background Color', 'youtha' ),
         'id' => 'sample_color1',
-        'type' => 'color',
+        'type' => 'text',
         'desc' => __( 'This color changes the background of your theme', 'youtha' ),
         'default' => '#FFFFFF',
         'css' => 'body { background-color: value }',

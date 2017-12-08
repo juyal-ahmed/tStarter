@@ -7,13 +7,9 @@
  * https://themeredesign.com
  */
 
-require get_template_directory() . '/functions/aqua-resizer.php';
-require get_template_directory() . '/functions/aqua-resizer-ratio-check.php';
-require get_template_directory() . '/functions/email.php';
-require get_template_directory() . '/functions/general.php';
-require get_template_directory() . '/functions/pagination.php';
-require get_template_directory() . '/functions/theme-functions.php';
-require get_template_directory() . '/functions/theme-cart-support.php';
-require get_template_directory() . '/functions/theme-shortcodes.php';
-require get_template_directory() . '/functions/template.php';
-require get_template_directory() . '/functions/discounts.php';
+require get_template_directory() . '/inc/aqua/aqua-resizer.php';
+require get_template_directory() . '/inc/aqua/aqua-resizer-ratio-check.php';
+require get_template_directory() . '/inc/general.php';
+require get_template_directory() . '/inc/pagination.php';
+require get_template_directory() . '/inc/theme-functions.php';
+require get_template_directory() . '/inc/theme-support.php';

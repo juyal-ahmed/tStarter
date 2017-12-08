@@ -29,12 +29,12 @@ if( !empty( $_post_summary ) ) {
 if( !is_singular() ) {
     $blog_index_content_type = 'content';
     if( $blog_index_content_type == 'content' ) {
-        the_content( __( "Continue Reading &#8594;", LANG_DOMAIN ) . "<span></span>" );    
+        the_content( __( "Continue Reading &#8594;", TRTHEME_LANG_DOMAIN ) . "<span></span>" );    
     } else {
         the_excerpt();
     }                
 } else {
-    the_content( __( "Continue Reading &#8594;", LANG_DOMAIN ) . "<span></span>" );
+    the_content( __( "Continue Reading &#8594;", TRTHEME_LANG_DOMAIN ) . "<span></span>" );
 }
 ?>
 </div>
