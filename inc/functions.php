@@ -11,5 +11,6 @@ require get_template_directory() . '/inc/aqua/aqua-resizer.php';
 require get_template_directory() . '/inc/aqua/aqua-resizer-ratio-check.php';
 require get_template_directory() . '/inc/general.php';
 require get_template_directory() . '/inc/pagination.php';
+require get_template_directory() . '/inc/template.php';
 require get_template_directory() . '/inc/theme-functions.php';
 require get_template_directory() . '/inc/theme-support.php';

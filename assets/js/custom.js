@@ -4,24 +4,6 @@ jQuery(document).ready(function() {
 
 
     /*
-	---------------------------------------------------------------------------------------
-		Superfish Menu Initialization
-		@Since Version 1.0
-	---------------------------------------------------------------------------------------
-	*/
-    jQuery('.sf-menu').superfish({
-        //add options here if required
-    });
-
-    /*
-	---------------------------------------------------------------------------------------
-		Select field chosen Initialization
-		@Since Version 1.0
-	---------------------------------------------------------------------------------------
-	*/
-    jQuery('select.chosen').chosen();
-
-    /*
     ---------------------------------------------------------------------------------------
         Initializing PrettyPhoto
     ---------------------------------------------------------------------------------------
@@ -34,6 +16,13 @@ jQuery(document).ready(function() {
     ---------------------------------------------------------------------------------------
     */
     umamah_global_notice_js();
+
+    /*
+    ---------------------------------------------------------------------------------------
+        Mobile nav
+    ---------------------------------------------------------------------------------------
+    */
+    umamah_mobile_nav_init();
 
 });
 
@@ -145,4 +134,18 @@ function umamah_global_notice_js(){
             });
         }
     }
+}
+
+/*
+*   Init mobile nav
+* */
+function umamah_mobile_nav_init() {
+    jQuery(document).on('click', '.toggle-mobile-menu', function (e) {
+        e.preventDefault();
+        jQuery('.mobile-menu').toggleClass('open');
+    });
+    jQuery(document).on('click', '.sf-sub-indicator', function (e) {
+        e.preventDefault();
+        jQuery(this).parent().parent().toggleClass('active');
+    });
 }

@@ -1,3 +1,220 @@
 #header-outer {
     background: #eaeaea;
+    padding: 20px 0;
+}
+
+#logo img {
+    height: 60px;
+}
+
+/*
+https://codepen.io/connorbrassington/pen/raNrEW
+*/
+.mobile-menu ul,
+.primary-menu ul {
+    background: #fff;
+    padding-left: 0;
+    margin: 0;
+    font-size: 0;
+    list-style-type: none;
+}
+
+.mobile-menu ul li,
+.primary-menu ul li {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0px 30px;
+    position: relative;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+.mobile-menu ul li a,
+.primary-menu ul li a {
+    color: #333;
+
+    -webkit-transition: color 0.25s linear;
+    -moz-transition: color 0.25s linear;
+    -ms-transition: color 0.25s linear;
+    -o-transition: color 0.25s linear;
+    transition: color 0.25s linear;
+}
+
+.mobile-menu ul li a:hover,
+.primary-menu ul li a:hover {
+    text-decoration: none;
+    color: blue;
+}
+
+.primary-menu > ul > li {
+    padding: 10px 30px;
+    line-height: 40px;
+}
+
+.primary-menu ul li ul {
+    display: none;
+    z-index: 1;
+    background: #fff;
+    border-top: 3px solid blue;
+    padding: 20px 0;
+    margin-top: 10px;
+    width: 200px;
+    left: 0;
+    position: absolute;
+}
+
+.primary-menu ul li ul li > ul {
+    display: none;
+    margin-top: -20px;
+    width: 200px;
+    top: 0;
+    left: 200px;
+    position: absolute;
+    padding-left: 0;
+}
+
+.primary-menu ul li ul li:hover > ul,
+.primary-menu ul li:hover ul li,
+.primary-menu ul li:hover > ul {
+    display: block;
+}
+
+.primary-menu ul li ul li span {
+    float: right;
+    color: blue;
+    padding: 2px 5px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.primary-menu .fa {
+    margin-left: 5px;
+}
+.primary-menu ul li ul li .fa {
+    position: absolute;
+    top: calc(50% - 10px);
+    line-height: 8px;
+    height: 20px;
+}
+.primary-menu ul li:last-child > ul {
+    right: 0;
+    left: inherit;
+}
+.primary-menu ul li:last-child ul li > ul {
+    right: 200px;
+    left: inherit;
+}
+.primary-menu ul li:last-child ul li {
+    text-align: right;
+}
+.primary-menu ul li:last-child:hover ul li span {
+    float: left;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.toggle-mobile-menu {
+    display: none;
+}
+.mobile-menu {
+    display: block;
+    opacity: 0;
+
+    position: absolute;
+    background: #fff;
+    z-index: 1;
+    border: 1px solid #eaeaea;
+    top: 0;
+    right: -10px;
+    left: -10px;
+
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+}
+
+@media(max-width: 992px) {
+    .primary-menu {
+        display: none;
+    }
+
+    .toggle-mobile-menu {
+        display: block;
+        font-size: 32px;
+        padding: 10px;
+        margin-top: 10px;
+        background: #333;
+        color: white;
+        border-radius: 2px;
+    }
+
+    .mobile-menu.open {
+        top: 20px;
+        opacity: 1;
+    }
+
+    .mobile-menu ul li {
+        display: block;
+    }
+
+    .mobile-menu > ul {
+        display: block;
+        padding: 30px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .mobile-menu ul li {
+        padding: 0;
+        padding-left: 10px;
+        line-height: 32px;
+    }
+
+    .mobile-menu ul li ul li {
+        padding: 0;
+        padding-left: 20px;
+    }
+
+    .mobile-menu ul li ul {
+        display: none;
+    }
+
+    .mobile-menu ul li ul li.active > ul,
+    .mobile-menu ul li.active > ul {
+        display: block;
+    }
+
+    .mobile-menu ul li ul li span .fa {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    .mobile-menu .fa {
+        line-height: 25px;
+    }
+
+    .sf-sub-indicator {
+        position: absolute;
+        right: 0;
+        border: 1px solid #0f0f0f;
+        padding: 0;
+        margin: 0;
+        width: 30px;
+        height: 28px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 2px;
+        z-index: 2;
+    }
 }

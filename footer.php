@@ -42,13 +42,19 @@
                                 </div>
 
 
-                                <div class="footer-sidebars-inner-widgets col-lg-2 col-md-2 col-sm-6 col-xs-12"></div>
-
-
-                                <div class="footer-sidebars-inner-widgets col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="footer-sidebars-inner-widgets col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                     <?php if ( is_active_sidebar( 'footer3' ) ) : ?>
                                         <div class="footer-sidebars-widgets-inner">
                                             <?php dynamic_sidebar( 'footer3' ); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+
+
+                                <div class="footer-sidebars-inner-widgets col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <?php if ( is_active_sidebar( 'footer4' ) ) : ?>
+                                        <div class="footer-sidebars-widgets-inner">
+                                            <?php dynamic_sidebar( 'footer4' ); ?>
                                         </div>
                                     <?php endif; ?>
                                 </div>

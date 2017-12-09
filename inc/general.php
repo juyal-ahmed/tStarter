@@ -8,10 +8,6 @@
 * https://themeredesign.com
 */
 
-function get_header_css_url() {
-    return 'header.css';
-}
-
-function get_footer_css_url() {
-    return 'footer.css';
+function get_asset_stylesheet_uri($css) {
+    return get_template_directory_uri() . '/assets/css/' . $css . '.css';
 }

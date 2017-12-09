@@ -55,6 +55,16 @@ function youtha_header_style() {
 	?>
 	<style type="text/css">
 	<?php
+	    if ( get_header_image() ) {
+            ?>
+            #header-outer {
+                background-image: url(<?php echo header_image(); ?>);
+            }
+            <?php
+        }
+    ?>
+
+    <?php
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 	?>
@@ -89,7 +99,7 @@ function youtha_admin_header_style() {
 		.appearance_page_custom-header #headimg {
 			border: none;
 		}
-		#headimg h1,
+        #headimg h1,
 		#desc {
 		}
 		#headimg h1 {

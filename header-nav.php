@@ -26,20 +26,35 @@ $logo_image = '';
                     </div>
 
                     <div class="pull-right">
-                        <div class="primary-menu-wrapper secondary-menu-exists-<?php echo $secondary_nav_using; ?>">
-                            <nav class="primary-menu">
-                                <ul class="sf-menu">
-                                    <?php
-                                    if( has_nav_menu( 'primary_menu' ) ) {
-                                        wp_nav_menu( array('walker' => new Umamah_Arrow_Walker_Nav_Menu, 'theme_location' => 'primary_menu', 'container' => '', 'items_wrap' => '%3$s' ) );
-                                    } else {
-                                        echo '<li><a href="">No menu assigned!</a></li>';
-                                    }
-                                    ?>
-                                </ul>
-                            </nav>
-                        </div>
+                        <span class="toggle-mobile-menu">☰</span>
+
+                        <nav class="primary-menu">
+                            <ul>
+                                <?php
+                                if( has_nav_menu( 'primary' ) ) {
+                                    wp_nav_menu( array('walker' => new Umamah_Arrow_Walker_Nav_Menu, 'theme_location' => 'primary', 'container' => '', 'items_wrap' => '%3$s' ) );
+                                } else {
+                                    echo '<li><a href="">No menu assigned!</a></li>';
+                                }
+                                ?>
+                            </ul>
+                        </nav>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="mobile-menu">
+                        <ul>
+                            <?php
+                            if( has_nav_menu( 'primary' ) ) {
+                                wp_nav_menu( array('walker' => new Umamah_Arrow_Walker_Nav_Menu, 'theme_location' => 'primary', 'container' => '', 'items_wrap' => '%3$s' ) );
+                            } else {
+                                echo '<li><a href="">No menu assigned!</a></li>';
+                            }
+                            ?>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>

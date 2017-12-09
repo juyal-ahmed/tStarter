@@ -9,6 +9,7 @@
 
 require get_template_directory() . '/inc/prefetch/titan-framework-checker.php';
 require get_template_directory() . '/inc/prefetch/const.php';
+require get_template_directory() . '/inc/prefetch/titan.php';
 require get_template_directory() . '/inc/prefetch/metas.php';
 require get_template_directory() . '/inc/prefetch/options.php';
 require get_template_directory() . '/inc/prefetch/customizer.php';

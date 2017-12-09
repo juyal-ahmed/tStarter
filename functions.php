@@ -7,7 +7,7 @@
  * https://themeredesign.com
  */
 
-require get_template_directory() . '/inc/prefetch.php';
-require get_template_directory() . '/inc/theme-support.php';
-require get_template_directory() . '/inc/registers.php';
-require get_template_directory() . '/inc/functions.php';
+require_once get_template_directory() . '/inc/prefetch.php';
+require_once get_template_directory() . '/inc/theme-support.php';
+require_once get_template_directory() . '/inc/registers.php';
+require_once get_template_directory() . '/inc/functions.php';

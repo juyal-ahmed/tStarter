@@ -1,11 +1,161 @@
 <?php
-/**
- * This file contained theme support functions, filters and actions
- *
- * @author Juyal Ahmed<tojibon@gmail.com>
- * @version: 1.0.0
- * https://themeredesign.com
- */
+if ( !class_exists( 'Umamah_Arrow_Walker_Nav_Menu' ) ) {
+    class Umamah_Arrow_Walker_Nav_Menu extends Walker_Nav_Menu
+    {
+        function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+        {
+            global $wp_query;
+            $indent = ($depth) ? str_repeat("\t", $depth) : '';
+
+            $class_names = '';
+
+            $classes = empty($item->classes) ? array() : (array)$item->classes;
+            $classes[] = 'menu-item-' . $item->ID;
+
+            if (!empty($item->description)) {
+                $classes[] = 'has-description';
+            }
+
+            $icon_classes = array();
+            foreach ($classes as $key => $val) {
+                if ('glyphicon' == substr(trim($val), 0, 9)) {
+                    if ('glyphicon' == $val) {
+                        unset($classes[$key]);
+                    } else {
+                        $icon_classes[] = $val;
+                        unset($classes[$key]);
+                    }
+                }
+            }
+
+            $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
+            $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+            $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
+            $id = $id ? ' id="' . esc_attr($id) . '"' : '';
+
+            $output .= $indent . '<li' . $id . $class_names . '>';
+
+            $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
+            $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
+            $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
+            $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
+
+            if (!empty($icon_classes)) {
+                $icon_classes_str = join(' ', $icon_classes);
+                $icon_text = '<span class="glyphicon glyphicon-icon ' . $icon_classes_str . '"></span>';
+            } else {
+                $icon_text = '';
+            }
+
+            $item_output = $args->before;
+            $item_output .= '<a' . $attributes . '>';
+            $item_output .= $icon_text;
+            $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+
+            if (!empty($item->description)) {
+                $item_output .= '<span class="menu-description">' . $item->description . '</span>';
+            }
+
+            $item_output .= '</a>';
+            $item_output .= $args->after;
+
+            $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+        }
+
+        function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output)
+        {
+            $id_field = $this->db_fields['id'];
+
+            if (!empty($children_elements[$element->$id_field]) && $element->menu_item_parent == 0) {
+                $element->title = $element->title . '<span class="sf-sub-indicator"><i class="fa fa-angle-down"></i></span>';
+            }
+
+            if (!empty($children_elements[$element->$id_field]) && $element->menu_item_parent != 0) {
+                $element->title = $element->title . '<span class="sf-sub-indicator"><i class="fa fa-angle-right"></i></span>';
+            }
+
+            Walker_Nav_Menu::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+        }
+    }
+}
+
+/*
+*
+* Adding bootstrap support on menu items by menu walker.
+*/
+if ( !class_exists( 'Umamah_Bootstrap_Walker' ) ) {
+    class Umamah_Bootstrap_Walker extends Walker_Nav_Menu {
+        function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
+            global $wp_query;
+            $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+            $class_names = $value = '';
+
+            if ( !empty( $args ) && is_object( $args ) && $args->has_children ) {
+                $class_names = "dropdown ";
+            }
+
+            $classes = empty( $object->classes ) ? array() : (array) $object->classes;
+
+            $class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $object ) );
+            $class_names = ' class="'. esc_attr( $class_names ) . '"';
+
+            $output .= $indent . '<li id="menu-item-'. $object->ID . '"' . $value . $class_names .'>';
+            $attributes  = ! empty( $object->attr_title ) ? ' title="'  . esc_attr( $object->attr_title ) .'"' : '';
+            $attributes .= ! empty( $object->target )     ? ' target="' . esc_attr( $object->target     ) .'"' : '';
+            $attributes .= ! empty( $object->xfn )        ? ' rel="'    . esc_attr( $object->xfn        ) .'"' : '';
+            $attributes .= ! empty( $object->url )        ? ' href="'   . esc_attr( $object->url        ) .'"' : '';
+
+            if ( !empty( $args ) && is_object( $args ) && $args->has_children ) {
+                $attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
+            }
+            if ( !empty( $args ) && is_object( $args ) && $args->before ) {
+                $item_output = $args->before;
+            } else {
+                $item_output = '';
+            }
+
+            $item_output .= '<a'. $attributes .'>';
+
+            if ( !empty( $args ) && is_object( $args ) && $args->link_before ) {
+                $item_output .= $args->link_before;
+            }
+
+            $item_output .= apply_filters( 'the_title', $object->title, $object->ID );
+
+            if ( !empty( $args ) && is_object( $args ) && $args->link_after ) {
+                $item_output .= $args->link_after;
+            }
+
+            if ( !empty( $args ) && is_object( $args ) && $args->has_children ) {
+                $item_output .= '<span class="caret"></span></a>';
+            } else {
+                $item_output .= '</a>';
+            }
+
+            if ( !empty( $args ) && is_object( $args ) && $args->after ) {
+                $item_output .= $args->after;
+            }
+
+            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $object, $depth, $args );
+        }
+
+        function start_lvl( &$output, $depth = 0, $args = array() ) {
+            $indent = str_repeat("\t", $depth);
+            $output .= "\n$indent<ul class=\"dropdown-menu\"  role=\"menu\">\n";
+        }
+
+        function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+            $id_field = $this->db_fields['id'];
+            if ( is_object( $args[0] ) ) {
+                $args[0]->has_children = ! empty( $children_elements[$element->$id_field] );
+            }
+            return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+        }
+    }
+}
+
 
 /*
 *

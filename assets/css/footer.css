@@ -3,3 +3,40 @@
     padding: 85px 0px;
     color: #767676;
 }
+
+@media(max-width: 767px) {
+    #footer-wrapper {
+        text-align: center;
+    }
+}
+
+.copyright {
+    color: #767676;
+}
+
+#footer-wrapper .copyright p:last-child {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.footer .widget,
+.footer .widget .bold,
+.footer .widget strong,
+.footer .widget b,
+.footer .widget .widget-title,
+.footer .widget a {
+    color: #767676;
+    text-decoration: none;
+}
+
+.footer .widget a:hover {
+    color: #fff;
+}
+
+.footer .widget ul li {
+    padding-bottom: 5px;
+}
+
+.footer-sidebars-widgets-inner {
+    margin-bottom: 30px;
+}
