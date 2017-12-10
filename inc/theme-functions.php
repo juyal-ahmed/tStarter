@@ -11,10 +11,14 @@
 function umamah_get_option($prefix, $field, $default = '') {
     if ( !class_exists('TitanFramework') ) return false;
 
-    $titan = TitanFramework::getInstance( 'umamah' );
+    $titan = TitanFramework::getInstance( TRTHEME_THEME_SLUG );
     $return = $titan->getOption( $prefix . '_' . $field );
     if ( is_bool($return) ) return $return;
     return $return ? $return : $default;
+}
+
+function umamah_get_site_layouot_css($layout = 'content') {
+    return umamah_get_option('general', $layout . '_layout', false) ? 'container-wide': 'container-boxed';
 }
 
 /**

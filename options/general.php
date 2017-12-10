@@ -35,10 +35,22 @@ function trtheme_general_theme_options() {
     ) );
 
     $tab->createOption( array(
-        'name' => 'Disable Secondary Menu',
-        'id' => 'general_secondary_menu',
+        'name' => 'Header/Footer Layout',
+        'id' => 'general_header_footer_layout',
         'default' => false,
         'desc' => '',
+        'enabled' => 'Wide',
+        'disabled' => 'Boxed',
+        'type' => 'enable'
+    ) );
+
+    $tab->createOption( array(
+        'name' => 'Content Layout',
+        'id' => 'general_content_layout',
+        'default' => false,
+        'desc' => '',
+        'enabled' => 'Wide',
+        'disabled' => 'Boxed',
         'type' => 'enable'
     ) );
 

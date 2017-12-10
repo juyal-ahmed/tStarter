@@ -28,4 +28,4 @@
 
     <?php get_header('nav'); ?>
 
-    <div id="container" class="page-container container">
+    <div id="container" class="container <?php echo umamah_get_site_layouot_css('content'); ?>">

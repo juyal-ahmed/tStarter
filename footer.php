@@ -14,7 +14,7 @@
 </div>
 
 <div id="footer-wrapper">
-    <div class="container container-wide">
+    <div class="container <?php echo umamah_get_site_layouot_css('header_footer'); ?>">
         <div class="row">
             <div class="col-lg-12">
 
