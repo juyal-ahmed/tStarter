@@ -71,7 +71,7 @@ https://codepen.io/connorbrassington/pen/raNrEW
 
 .primary-menu ul li ul li > ul {
     display: none;
-    margin-top: -20px;
+    margin-top: -25px;
     width: 200px;
     top: 0;
     left: 200px;
@@ -135,8 +135,8 @@ https://codepen.io/connorbrassington/pen/raNrEW
     background: #E6EEFF;
     z-index: 1;
     top: 0;
-    right: -9px;
-    left: -9px;
+    right: 0px;
+    left: 0px;
 
     -webkit-transition: all 0.25s linear;
     -moz-transition: all 0.25s linear;

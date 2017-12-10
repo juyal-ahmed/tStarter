@@ -1,7 +1,12 @@
+.sidebar-wrap {
+    background: rgba(213,213,213,0.45);
+}
+
 .sidebar {
     overflow: hidden;
     display: block;
     position: relative;
+    padding: 10px;
 }
 
 .sidebar .widget {
