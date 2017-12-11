@@ -43,8 +43,8 @@ const config = {
 	plugins: [
 		new ExtractTextPlugin('css/app.css'),
 		new BrowserSyncPlugin({
-		    proxy: 'wordpack.dev',
-		    port: 3000,
+		    proxy: 'localhost/product/titan-tr-starter/',
+		    port: 8080,
 		    files: [
 		        '**/*.php'
 		    ],
