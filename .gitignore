@@ -1,2 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-assets/bower_components
+bower_components
+node_modules
+yarn.lock

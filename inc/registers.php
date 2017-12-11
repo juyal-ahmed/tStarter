@@ -83,14 +83,15 @@ if( !function_exists( "umamah_theme_styles" ) ) {
         if ( false ) { //If you have any other conditions to skip default resource loading
 
         } else {
-            wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/bower_components/font-awesome/css/font-awesome.css' );
-            wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/bower_components/bootstrap/dist/css/bootstrap.css', array(), '1.0', 'all' );
-            wp_enqueue_style( 'chosen', get_template_directory_uri() . '/assets/bower_components/chosen/chosen.css', array(), '1.2', 'all' );
-            wp_enqueue_style( 'prettyPhoto', get_template_directory_uri() . '/assets/bower_components/jquery-prettyPhoto/css/prettyPhoto.css', array(), '1.2', 'all' );
-            wp_enqueue_style( 'global', get_asset_stylesheet_uri('global'), array(), '1.0', 'all' );    //Main theme stylesheet
-            wp_enqueue_style( 'header', get_asset_stylesheet_uri('header'), array(), '1.0', 'all' );    //Main theme stylesheet
-            wp_enqueue_style( 'sidebar', get_asset_stylesheet_uri('sidebar'), array(), '1.0', 'all' );    //Main theme stylesheet
-            wp_enqueue_style( 'footer', get_asset_stylesheet_uri('footer'), array(), '1.0', 'all' );    //Main theme stylesheet
+            wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/bower_components/font-awesome/css/font-awesome.css' );
+            wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap.css', array(), '1.0', 'all' );
+            wp_enqueue_style( 'chosen', get_template_directory_uri() . '/bower_components/chosen/chosen.css', array(), '1.2', 'all' );
+            wp_enqueue_style( 'prettyPhoto', get_template_directory_uri() . '/bower_components/jquery-prettyPhoto/css/prettyPhoto.css', array(), '1.2', 'all' );
+            //wp_enqueue_style( 'global', get_asset_stylesheet_uri('global'), array(), '1.0', 'all' );    //Main theme stylesheet
+            //wp_enqueue_style( 'header', get_asset_stylesheet_uri('header'), array(), '1.0', 'all' );    //Main theme stylesheet
+            //wp_enqueue_style( 'sidebar', get_asset_stylesheet_uri('sidebar'), array(), '1.0', 'all' );    //Main theme stylesheet
+            //wp_enqueue_style( 'footer', get_asset_stylesheet_uri('footer'), array(), '1.0', 'all' );    //Main theme stylesheet
+            wp_enqueue_style( 'app', get_public_stylesheet_uri('app'), array(), '1.0', 'all' );    //Main theme stylesheet
             wp_enqueue_style( 'youtha', get_stylesheet_uri(), array(), '1.0', 'all' );    //Main theme stylesheet
         }
     }
@@ -112,8 +113,8 @@ if( !function_exists( "umamah_theme_js" ) ) {
 
             wp_enqueue_script( 'jquery' );
 
-            wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/bower_components/bootstrap/dist/js/bootstrap.js', array('jquery'), '1.2', true );
-            wp_enqueue_script( 'prettyPhoto', get_template_directory_uri() . '/assets/bower_components/jquery-prettyPhoto/js/jquery.prettyPhoto.js', array('jquery'), '1.2', true );
+            wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.js', array('jquery'), '1.2', true );
+            wp_enqueue_script( 'prettyPhoto', get_template_directory_uri() . '/bower_components/jquery-prettyPhoto/js/jquery.prettyPhoto.js', array('jquery'), '1.2', true );
 
             // wp_enqueue_script( 'youtha-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20120206', true );
             wp_enqueue_script( 'youtha-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -122,6 +123,7 @@ if( !function_exists( "umamah_theme_js" ) ) {
             }
 
             wp_enqueue_script( 'youtha', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), '1.3', true ); //Umamah custm javascript
+            wp_enqueue_script( 'app', get_public_js_uri('app'), array('jquery'), '1.3', true ); //Umamah custm javascript
             wp_localize_script( 'youtha', 'Youtha', array(
                 'ajaxurl' => admin_url('admin-ajax.php')
             ));
