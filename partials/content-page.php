@@ -7,12 +7,18 @@
  * @package youtha
  */
 
+$_header_custom_title = get_post_meta( get_the_ID(), TRTHEME_THEME_KEY . 'custom_title', TRUE );
+$_header_sub_title = get_post_meta( get_the_ID(), TRTHEME_THEME_KEY . 'sub_title', TRUE );
+$_header_hide_title = get_post_meta( get_the_ID(), TRTHEME_THEME_KEY . 'hide_title', TRUE );
+if ( !empty( $_header_sub_title ) ) {
+	$_header_sub_title = ' <small class="entry-sub-title">'.$_header_sub_title.'</small>';
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php if (!is_front_page()) { ?>
+    <?php if (!is_front_page() && !$_header_hide_title) { ?>
         <header class="entry-header">
-            <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+            <?php the_title('<h1 class="entry-title">',  $_header_sub_title .'</h1>'); ?>
         </header>
     <?php } ?>
 
