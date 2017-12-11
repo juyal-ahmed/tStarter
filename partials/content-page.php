@@ -26,7 +26,7 @@
         ?>
     </div>
 
-    <?php if (!is_front_page()) { ?>
+    <?php if (!is_front_page() && is_user_logged_in() ) { ?>
         <footer class="entry-footer">
             <?php
             edit_post_link(

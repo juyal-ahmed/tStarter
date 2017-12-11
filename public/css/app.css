@@ -723,46 +723,201 @@ https://codepen.io/connorbrassington/pen/raNrEW
 
 .footer-sidebars-widgets-inner {
     margin-bottom: 30px;
-}ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
-ol.commentlist li { }
-ol.commentlist li.alt { }
-ol.commentlist li.bypostauthor {}
-ol.commentlist li.byuser {}
-ol.commentlist li.comment-author-admin {}
-ol.commentlist li.comment { border-bottom:1px dotted #666; padding:1em; }
-ol.commentlist li.comment div.comment-author {}
-ol.commentlist li.comment div.vcard { font:normal 16px georgia,times,serif; }
-ol.commentlist li.comment div.vcard cite.fn { font-style:normal; }
-ol.commentlist li.comment div.vcard cite.fn a.url {}
-ol.commentlist li.comment div.vcard img.avatar { border:5px solid #ccc; float:right; margin:0 0 1em 1em; }
-ol.commentlist li.comment div.vcard img.avatar-32 {}
-ol.commentlist li.comment div.vcard img.photo {}
-ol.commentlist li.comment div.vcard span.says {}
-ol.commentlist li.comment div.commentmetadata {}
-ol.commentlist li.comment div.comment-meta { font-size:9px; }
-ol.commentlist li.comment div.comment-meta a { color:#ccc; }
-ol.commentlist li.comment p { font-size:11px; margin:0 0 1em; }
-ol.commentlist li.comment ul { font-size:11px; list-style:square; margin:0 0 1em 2em; }
-ol.commentlist li.comment div.reply { font-size:11px; }
-ol.commentlist li.comment div.reply a { font-weight:bold; }
-ol.commentlist li.comment ul.children { list-style:none; margin:1em 0 0; text-indent:0; }
-ol.commentlist li.comment ul.children li {}
-ol.commentlist li.comment ul.children li.alt {}
-ol.commentlist li.comment ul.children li.bypostauthor {}
-ol.commentlist li.comment ul.children li.byuser {}
-ol.commentlist li.comment ul.children li.comment {}
-ol.commentlist li.comment ul.children li.comment-author-admin {}
-ol.commentlist li.comment ul.children li.depth-2 { border-left:5px solid #555; margin:0 0 .25em .25em; }
-ol.commentlist li.comment ul.children li.depth-3 { border-left:5px solid #999; margin:0 0 .25em .25em; }
-ol.commentlist li.comment ul.children li.depth-4 { border-left:5px solid #bbb; margin:0 0 .25em .25em; }
-ol.commentlist li.comment ul.children li.depth-5 {}
-ol.commentlist li.comment ul.children li.odd {}
-ol.commentlist li.even { background:#fff; }
-ol.commentlist li.odd { background:#f6f6f6; }
-ol.commentlist li.parent { border-left:5px solid #111; }
-ol.commentlist li.thread-alt { }
-ol.commentlist li.thread-even {}
-ol.commentlist li.thread-odd {}
+}ol.commentlist {
+	list-style: none;
+	margin: 0 0 1em;
+	padding: 0;
+	text-indent: 0;
+}
 
+ol.commentlist li {
+	margin-top: 30px;
+	border-radius: 2px;
+}
+
+ol.commentlist li.alt {
+}
+
+ol.commentlist li.bypostauthor {
+}
+
+ol.commentlist li.byuser {
+}
+
+ol.commentlist li.comment-author-admin {
+}
+
+ol.commentlist li.comment {
+	border-bottom: 1px solid #666;
+	padding: 1em;
+}
+
+ol.commentlist li.comment div.comment-author {
+}
+
+ol.commentlist li.comment div.vcard {
+	font: normal 16px georgia, times, serif;
+}
+
+ol.commentlist li.comment div.vcard cite.fn {
+	font-style: normal;
+}
+
+ol.commentlist li.comment div.vcard cite.fn a.url {
+}
+
+ol.commentlist li.comment div.vcard img.avatar {
+	border-radius: 3px;
+	border: 5px solid #ccc;
+	float: left;
+	margin: 0;
+	margin-right: 15px;
+}
+
+ol.commentlist li.comment div.vcard img.avatar-32 {
+}
+
+ol.commentlist li.comment div.vcard img.photo {
+}
+
+ol.commentlist li.comment div.vcard span.says {
+}
+
+ol.commentlist li.comment div.commentmetadata {
+}
+
+ol.commentlist li.comment div.comment-meta {
+	font-size: 9px;
+}
+
+ol.commentlist li.comment div.comment-meta a {
+	color: #ccc;
+}
+
+ol.commentlist li.comment p {
+	font-size: 14px;
+	margin: 0 0 1em;
+}
+
+ol.commentlist li.comment ul {
+	font-size: 14px;
+	list-style: square;
+	margin: 0 0 1em 2em;
+}
+
+ol.commentlist li.comment div.reply {
+	font-size: 14px;
+}
+
+ol.commentlist li.comment div.reply a {
+	font-weight: bold;
+}
+
+ol.commentlist li.comment ul.children {
+	list-style: none;
+	margin: 1em 0 0;
+	text-indent: 0;
+}
+
+ol.commentlist li.comment ul.children li {
+	margin-top: 20px;
+}
+
+ol.commentlist li.comment ul.children li.alt {
+}
+
+ol.commentlist li.comment ul.children li.bypostauthor {
+}
+
+ol.commentlist li.comment ul.children li.byuser {
+}
+
+ol.commentlist li.comment ul.children li.comment {
+}
+
+ol.commentlist li.comment ul.children li.comment-author-admin {
+}
+
+ol.commentlist li.comment ul.children li.depth-2 {
+	border-left: 5px solid #555;
+	margin: 0 0 .25em .25em;
+}
+
+ol.commentlist li.comment ul.children li.depth-3 {
+	border-left: 5px solid #999;
+	margin: 0 0 .25em .25em;
+}
+
+ol.commentlist li.comment ul.children li.depth-4 {
+	border-left: 5px solid #bbb;
+	margin: 0 0 .25em .25em;
+}
+
+ol.commentlist li.comment ul.children li.depth-5 {
+}
+
+ol.commentlist li.comment ul.children li.odd {
+}
+
+ol.commentlist li.even {
+	background: #fff;
+}
+
+ol.commentlist li.odd {
+	background: #f6f6f6;
+}
+
+ol.commentlist li.parent {
+	border-left: 5px solid #111;
+}
+
+ol.commentlist li.thread-alt {
+}
+
+ol.commentlist li.thread-even {
+}
+
+ol.commentlist li.thread-odd {
+}
+
+#commentform .form-group {
+	margin-bottom: 30px;
+}
+
+#commentform input {
+	padding: 20px !important;
+}
+
+#commentform input, #commentform textarea {
+	padding: 10px 20px;
+	background: #f7f7f7;
+	border: none;
+	font-size: 1em;
+	border-bottom: 2px dashed #d7d7d7;
+	font-family: chaparral-pro, serif;
+}
+
+#commentform input#submit, .button {
+	color: #fff;
+	border: none !important;
+	background: #3dd6b7;
+	-webkit-appearance: none;
+}
+
+#commentform input#submit:hover, .button:hover {
+	background: #81edd7;
+}
+
+#commentform input#submit:active, .button:active {
+	background: #2baa90;
+}
+
+.comment-instruction {
+	margin-bottom: 60px;
+}
+
+.comment-instruction h4 {
+	font-weight: bold;
+}
 .primary-menu ul {
   background: blue; }

@@ -109,7 +109,7 @@ if (comments_open()) : ?>
             <div class="comment-content">
                 <section id="respond" class="respond-form">
 
-                    <h3 id="comment-form-title">
+                    <h3 id="comment-form-title" class="mt-60 mb-30">
                         <?php
                         if ('ticket' == $post_type) {
                             ?>
