@@ -74,13 +74,14 @@ code {
     font: 12px "Andale Mono",Courier,"Courier New",monospace;
 }
 
-.hentry {
-    padding: 40px 0;
+.entry-header {
+	margin-bottom: 30px;
 }
 
 .entry-title {
     -ms-word-wrap: break-word;
     word-wrap: break-word;
+	font-weight: bold;
 }
 
 .entry-content {
@@ -335,8 +336,10 @@ nav.navigation .nav-next {
 nav.navigation .nav-next::after {
     content: "\2192";
     margin-left: 10px;
-}#header-outer {
+}
+#header-outer {
     padding: 20px 0;
+	margin-bottom: 20px;
 }
 
 #logo img {
@@ -544,7 +547,8 @@ https://codepen.io/connorbrassington/pen/raNrEW
         border-radius: 2px;
         z-index: 2;
     }
-}.sidebar-wrap {
+}
+.sidebar-wrap {
     background: rgba(213,213,213,0.45);
 }
 

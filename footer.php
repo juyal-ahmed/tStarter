@@ -13,7 +13,7 @@
 <!-- END #container -->
 </div>
 
-<div id="footer-wrapper">
+<div id="footer-wrapper" class="mt-60">
     <div class="container <?php echo umamah_get_site_layouot_css('header_footer'); ?>">
         <div class="row">
             <div class="col-lg-12">

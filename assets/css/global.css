@@ -74,13 +74,14 @@ code {
     font: 12px "Andale Mono",Courier,"Courier New",monospace;
 }
 
-.hentry {
-    padding: 40px 0;
+.entry-header {
+	margin-bottom: 30px;
 }
 
 .entry-title {
     -ms-word-wrap: break-word;
     word-wrap: break-word;
+	font-weight: bold;
 }
 
 .entry-content {
