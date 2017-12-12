@@ -1,0 +1,46 @@
+article.post {
+	background: #ffffff;
+	padding-bottom: 60px;
+	margin-bottom: 60px;
+}
+
+article.post .entry-header {
+	padding-top: 60px;
+	width: 80%;
+	display: block;
+	margin: 0 auto 30px;
+}
+
+article.post .entry-content {
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 60px;
+}
+
+article.post .featured-image {
+	position: relative;
+}
+
+article.post .featured-image img {
+	max-width: 100%;
+	height: auto;
+}
+
+.author_bio_section{
+	background: none repeat scroll 0 0 #F5F5F5;
+	padding: 15px;
+	border: 1px solid #ccc;
+}
+
+.author_name{
+	font-size:16px;
+	font-weight: bold;
+}
+
+.author_details img {
+	border: 1px solid #D8D8D8;
+	border-radius: 50%;
+	float: left;
+	margin: 0 10px 10px 0;
+}

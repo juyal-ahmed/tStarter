@@ -1,0 +1,19 @@
+article.page {
+	background: #ffffff;
+	padding-bottom: 60px;
+	margin-bottom: 60px;
+}
+
+article.page .entry-header {
+	padding-top: 60px;
+	width: 80%;
+	display: block;
+	margin: 0 auto 30px;
+}
+
+article.page .entry-content {
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 60px;
+}

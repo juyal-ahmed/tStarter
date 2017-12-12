@@ -10,7 +10,7 @@
 
 $is_sidebar_widgets_loaded = false;
 ?>
-<div class="sidebar pt-40 pb-60">
+<div class="sidebar pb-60">
     <?php if (!is_page() && (function_exists('dynamic_sidebar') && is_active_sidebar('main-sidebar'))) { ?>
 
         <!--BEGIN Main Sidebar-->

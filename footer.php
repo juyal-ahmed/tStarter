@@ -69,7 +69,7 @@
                         if( !empty( $footer_copyright_text ) ) {
                             echo do_shortcode( $footer_copyright_text );
                         } else {
-                            $footer_copyright_text = 'Copyright &copy; '.date( "Y" ).' '.get_bloginfo( 'name' ).' All Rights Reserved.';
+                            $footer_copyright_text = 'Copyright &copy; '.date( "Y" ).' '.get_bloginfo( 'name' ).' Powered by <a href="http://wordpress.org/">WordPress</a>. '.get_bloginfo( 'name' ).' by Themeana.';
                             ?><p><?php echo $footer_copyright_text; ?></p><?php
                         }
                         ?>
