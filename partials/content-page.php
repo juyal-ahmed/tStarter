@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package youtha
+ * @package trstarter
  */
 
 $_header_custom_title = get_post_meta( get_the_ID(), TRTHEME_THEME_KEY . 'custom_title', TRUE );
@@ -26,7 +26,7 @@ if ( !empty( $_header_sub_title ) ) {
         <?php the_content(); ?>
         <?php
         wp_link_pages(array(
-            'before' => '<div class="page-links">' . esc_html__('Pages:', 'youtha'),
+            'before' => '<div class="page-links">' . esc_html__('Pages:', TRTHEME_LANG_DOMAIN),
             'after' => '</div>',
         ));
         ?>
@@ -38,7 +38,7 @@ if ( !empty( $_header_sub_title ) ) {
             edit_post_link(
                 sprintf(
                 /* translators: %s: Name of current post */
-                    esc_html__('Edit %s', 'youtha'),
+                    esc_html__('Edit %s', TRTHEME_LANG_DOMAIN),
                     the_title('<span class="screen-reader-text">"', '"</span>', false)
                 ),
                 '<span class="edit-link">',

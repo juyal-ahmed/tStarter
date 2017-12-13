@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package youtha
+ * @package trstarter
  */
 
 get_header(); ?>

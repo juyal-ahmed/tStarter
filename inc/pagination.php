@@ -32,13 +32,13 @@ if ( ! function_exists('trtitan_pagination') ) {
         if( is_array( $pages ) ) {
             echo '<ul class="pagination">';
             if ( $paged > 1 ) {
-                echo '<li>' . get_previous_posts_link(__('&#8592; Previous', "umamah")) . '</li>';
+                echo '<li>' . get_previous_posts_link(__('&#8592; Previous', TRTHEME_LANG_DOMAIN)) . '</li>';
             }
             echo '<li class="disabled"><span>'. $paged . ' of ' . $wp_query->max_num_pages .'</span></li>';
             foreach ( $pages as $page ) {
                     echo "<li>$page</li>";
             }
-            echo '<li>' . get_next_posts_link(__('Next &#8594;', "umamah")) . '</li>';
+            echo '<li>' . get_next_posts_link(__('Next &#8594;', TRTHEME_LANG_DOMAIN)) . '</li>';
            echo '</ul>';
         }
 	}
@@ -54,7 +54,7 @@ if ( ! function_exists('trtitan_pagination') ) {
  */
 function bootstrap_link_pages( $args = array () ) {
     $defaults = array(
-        'before'      => '<p>' . __('Pages:', 'umamah'),
+        'before'      => '<p>' . __('Pages:', TRTHEME_LANG_DOMAIN),
         'after'       => '</p>',
         'before_link' => '',
         'after_link'  => '',
@@ -144,9 +144,9 @@ if ( !function_exists('trtitan_pagejump') ) {
 		 }
 		 if ( 1 != $pages ) {
 			echo '<div class="post-navigation clr"><div class="alignleft">';
-			previous_posts_link( '&larr; ' . __('Newer Posts', 'umamah' ) );
+			previous_posts_link( '&larr; ' . __('Newer Posts', TRTHEME_LANG_DOMAIN ) );
 			echo '</div><div class="alignright">';
-			next_posts_link( __('Older Posts', 'umamah' ) .' &rarr;' );
+			next_posts_link( __('Older Posts', TRTHEME_LANG_DOMAIN ) .' &rarr;' );
 			echo '</div></div>';
 		 }
 	}

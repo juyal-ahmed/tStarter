@@ -15,19 +15,19 @@
 function trtheme_general_theme_customizers() {
     global $theme_customizer;
     $theme_customizer->createOption( array(
-        'name' => __( 'Background Color', 'youtha' ),
+        'name' => __( 'Background Color', TRTHEME_LANG_DOMAIN ),
         'id' => 'sample_color1',
         'type' => 'text',
-        'desc' => __( 'This color changes the background of your theme', 'youtha' ),
+        'desc' => __( 'This color changes the background of your theme', TRTHEME_LANG_DOMAIN ),
         'default' => '#FFFFFF',
         'css' => 'body { background-color: value }',
     ) );
 
     $theme_customizer->createOption( array(
-        'name' => __( 'Headings Font', 'youtha' ),
+        'name' => __( 'Headings Font', TRTHEME_LANG_DOMAIN ),
         'id' => 'headings_font',
         'type' => 'font',
-        'desc' => __( 'Select the font for all headings in the site', 'youtha' ),
+        'desc' => __( 'Select the font for all headings in the site', TRTHEME_LANG_DOMAIN ),
         'show_color' => false,
         'show_font_size' => false,
         'show_font_weight' => false,

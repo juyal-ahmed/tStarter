@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package youtha
+ * @package trstarter
  */
 
 global $contact_error_text, $contact_has_error, $contact_email_sent, $contact_captcha_placeholder;
@@ -22,13 +22,13 @@ $_summary = get_post_meta( get_the_ID(), TRTHEME_THEME_KEY . 'contact_form_summa
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'youtha' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', TRTHEME_LANG_DOMAIN ),
 				'after'  => '</div>',
 			) );
 		?>
 
         <?php if( $contact_email_sent ) { ?>
-            <p class="mt-30 mb-0 alert alert-success"><?php _e( 'Thanks, your contact request email was sent successfully.', 'umamah' ) ?></p>
+            <p class="mt-30 mb-0 alert alert-success"><?php _e( 'Thanks, your contact request email was sent successfully.', TRTHEME_LANG_DOMAIN ) ?></p>
         <?php } else { ?>
             <div class="entry-contact-wrapper trtitan-form-wrapper">
                 <div id="contactform-wrapper">
@@ -45,7 +45,7 @@ $_summary = get_post_meta( get_the_ID(), TRTHEME_THEME_KEY . 'contact_form_summa
 
                         <?php if( $contact_has_error ) {
                             if( empty( $contact_error_text ) ) {
-                                $contact_error_text = __( 'Sorry, an error occured.', 'umamah' );
+                                $contact_error_text = __( 'Sorry, an error occured.', TRTHEME_LANG_DOMAIN );
                             }
                             ?>
                             <p class="mt-30 alert alert-warning"><?php echo $contact_error_text; ?></p>
@@ -53,23 +53,23 @@ $_summary = get_post_meta( get_the_ID(), TRTHEME_THEME_KEY . 'contact_form_summa
 
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <input type="text" name="contact_name" value="<?php if(isset($_POST['contact_name'])) echo $_POST['contact_name'];?>" class="form-control input-lg" id="contact_name" placeholder="<?php _e('Name:*', 'umamah') ?>">
+                                <input type="text" name="contact_name" value="<?php if(isset($_POST['contact_name'])) echo $_POST['contact_name'];?>" class="form-control input-lg" id="contact_name" placeholder="<?php _e('Name:*', TRTHEME_LANG_DOMAIN) ?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <input type="contact_email" name="contact_email" value="<?php if(isset($_POST['contact_email'])) echo $_POST['contact_email'];?>" class="form-control input-lg" id="contact_email" placeholder="<?php _e('Email:*', 'umamah') ?>">                     </div>
+                                <input type="contact_email" name="contact_email" value="<?php if(isset($_POST['contact_email'])) echo $_POST['contact_email'];?>" class="form-control input-lg" id="contact_email" placeholder="<?php _e('Email:*', TRTHEME_LANG_DOMAIN) ?>">                     </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <input type="text" name="contact_subject" value="<?php if(isset($_POST['contact_subject'])) echo $_POST['contact_subject'];?>" class="form-control input-lg" id="contact_subject" placeholder="<?php _e('Subject:', 'umamah') ?>">        </div>
+                                <input type="text" name="contact_subject" value="<?php if(isset($_POST['contact_subject'])) echo $_POST['contact_subject'];?>" class="form-control input-lg" id="contact_subject" placeholder="<?php _e('Subject:', TRTHEME_LANG_DOMAIN) ?>">        </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <textarea name="contact_comments" id="comments-text" class="form-control input-lg" rows="5" cols="30" placeholder="<?php _e('Your Say:*', 'umamah') ?>"><?php if(isset($_POST['contact_comments'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['contact_comments']); } else { echo $_POST['contact_comments']; } } ?></textarea>        </div>
+                                <textarea name="contact_comments" id="comments-text" class="form-control input-lg" rows="5" cols="30" placeholder="<?php _e('Your Say:*', TRTHEME_LANG_DOMAIN) ?>"><?php if(isset($_POST['contact_comments'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['contact_comments']); } else { echo $_POST['contact_comments']; } } ?></textarea>        </div>
                         </div>
 
                         <div class="form-group">
@@ -79,7 +79,7 @@ $_summary = get_post_meta( get_the_ID(), TRTHEME_THEME_KEY . 'contact_form_summa
 
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <button type="submit" name="contact_submitted" class="btn btn-primary btn-lg"><?php _e('SUBMIT CONTACT', 'umamah') ?></button>
+                                <button type="submit" name="contact_submitted" class="btn btn-primary btn-lg"><?php _e('SUBMIT CONTACT', TRTHEME_LANG_DOMAIN) ?></button>
                             </div>
                         </div>
 
@@ -96,7 +96,7 @@ $_summary = get_post_meta( get_the_ID(), TRTHEME_THEME_KEY . 'contact_form_summa
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'youtha' ),
+					esc_html__( 'Edit %s', TRTHEME_LANG_DOMAIN ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link">',

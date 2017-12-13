@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package youtha
+ * @package trstarter
  */
 
 ?>
@@ -19,7 +19,7 @@
 
 		<?php
 		wp_link_pages(array(
-			'before' => '<div class="page-links">' . esc_html__('Pages:', 'youtha'),
+			'before' => '<div class="page-links">' . esc_html__('Pages:', TRTHEME_LANG_DOMAIN),
 			'after' => '</div>',
 		));
 		?>
@@ -48,7 +48,7 @@
 		edit_post_link(
 			sprintf(
 			/* translators: %s: Name of current post */
-				esc_html__('Edit %s', 'youtha'),
+				esc_html__('Edit %s', TRTHEME_LANG_DOMAIN),
 				the_title('<span class="screen-reader-text">"', '"</span>', false)
 			),
 			'<span class="edit-link">',

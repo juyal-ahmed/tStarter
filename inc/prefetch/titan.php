@@ -9,13 +9,13 @@
 
 if ( ! function_exists( 'trtitan_setup' ) ) {
     function trtitan_setup() {
-        load_theme_textdomain( 'youtha', get_template_directory() . '/languages' );
+        load_theme_textdomain( TRTHEME_LANG_DOMAIN, get_template_directory() . '/languages' );
         add_theme_support( 'automatic-feed-links' );
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
         add_editor_style( 'editor-style.css' );
         register_nav_menus( array(
-            'primary' => esc_html__( 'Primary Menu', 'youtha' ),
+            'primary' => esc_html__( 'Primary Menu', TRTHEME_LANG_DOMAIN ),
         ) );
 
         add_theme_support( 'html5', array(

@@ -12,7 +12,7 @@
  *
  * @link http://codex.wordpress.org/Custom_Headers
  *
- * @package youtha
+ * @package trstarter
  */
 
 /**

@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.me/
  *
- * @package youtha
+ * @package trstarter
  */
 
 /**

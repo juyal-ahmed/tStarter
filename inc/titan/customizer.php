@@ -1,8 +1,8 @@
 <?php
 /**
- * youtha Theme Customizer.
+ * trstarter Theme Customizer.
  *
- * @package youtha
+ * @package trstarter
  */
 
 /**
