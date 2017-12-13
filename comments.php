@@ -48,17 +48,17 @@ if (post_password_required()) {
                     ?>
 
                     <?php
-                    $umamah_get_previous_comments_link = umamah_get_previous_comments_link(__("Older comments", TRTHEME_LANG_DOMAIN));
-                    $umamah_get_next_comments_link = umamah_get_next_comments_link(__("Newer comments", TRTHEME_LANG_DOMAIN));
-                    if (!empty($umamah_get_previous_comments_link) || !empty($umamah_get_next_comments_link)) {
+                    $trtitan_get_previous_comments_link = trtitan_get_previous_comments_link(__("Older comments", TRTHEME_LANG_DOMAIN));
+                    $trtitan_get_next_comments_link = trtitan_get_next_comments_link(__("Newer comments", TRTHEME_LANG_DOMAIN));
+                    if (!empty($trtitan_get_previous_comments_link) || !empty($trtitan_get_next_comments_link)) {
                         ?>
                         <nav class="comment-nav">
                             <ul class="clearfix">
-                                <?php if (!empty($umamah_get_previous_comments_link)) { ?>
-                                    <li><?php echo $umamah_get_previous_comments_link; ?></li>
+                                <?php if (!empty($trtitan_get_previous_comments_link)) { ?>
+                                    <li><?php echo $trtitan_get_previous_comments_link; ?></li>
                                 <?php } ?>
-                                <?php if (!empty($umamah_get_next_comments_link)) { ?>
-                                    <li><?php echo $umamah_get_next_comments_link; ?></li>
+                                <?php if (!empty($trtitan_get_next_comments_link)) { ?>
+                                    <li><?php echo $trtitan_get_next_comments_link; ?></li>
                                 <?php } ?>
                             </ul>
                         </nav>
@@ -79,17 +79,17 @@ if (post_password_required()) {
                 <?php endif; ?>
 
                 <?php
-                $umamah_get_previous_comments_link = umamah_get_previous_comments_link(__("Older comments", TRTHEME_LANG_DOMAIN));
-                $umamah_get_next_comments_link = umamah_get_next_comments_link(__("Newer comments", TRTHEME_LANG_DOMAIN));
-                if (!empty($umamah_get_previous_comments_link) || !empty($umamah_get_next_comments_link)) {
+                $trtitan_get_previous_comments_link = trtitan_get_previous_comments_link(__("Older comments", TRTHEME_LANG_DOMAIN));
+                $trtitan_get_next_comments_link = trtitan_get_next_comments_link(__("Newer comments", TRTHEME_LANG_DOMAIN));
+                if (!empty($trtitan_get_previous_comments_link) || !empty($trtitan_get_next_comments_link)) {
                     ?>
                     <nav class="comment-nav">
                         <ul class="clearfix">
-                            <?php if (!empty($umamah_get_previous_comments_link)) { ?>
-                                <li><?php echo $umamah_get_previous_comments_link; ?></li>
+                            <?php if (!empty($trtitan_get_previous_comments_link)) { ?>
+                                <li><?php echo $trtitan_get_previous_comments_link; ?></li>
                             <?php } ?>
-                            <?php if (!empty($umamah_get_next_comments_link)) { ?>
-                                <li><?php echo $umamah_get_next_comments_link; ?></li>
+                            <?php if (!empty($trtitan_get_next_comments_link)) { ?>
+                                <li><?php echo $trtitan_get_next_comments_link; ?></li>
                             <?php } ?>
                         </ul>
                     </nav>

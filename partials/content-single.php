@@ -19,7 +19,7 @@
 		<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 
 		<div class="entry-meta">
-			<?php youtha_posted_on(); ?>
+			<?php trtitan_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
@@ -35,7 +35,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php youtha_entry_footer(); ?>
+		<?php trtitan_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 

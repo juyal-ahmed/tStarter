@@ -30,7 +30,7 @@ $_summary = get_post_meta( get_the_ID(), TRTHEME_THEME_KEY . 'contact_form_summa
         <?php if( $contact_email_sent ) { ?>
             <p class="mt-30 mb-0 alert alert-success"><?php _e( 'Thanks, your contact request email was sent successfully.', 'umamah' ) ?></p>
         <?php } else { ?>
-            <div class="entry-contact-wrapper umamah-form-wrapper">
+            <div class="entry-contact-wrapper trtitan-form-wrapper">
                 <div id="contactform-wrapper">
 
                     <form class="form-horizontal" method="post" action="<?php the_permalink(); ?>" role="form">

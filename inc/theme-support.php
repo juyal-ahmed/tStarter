@@ -161,8 +161,8 @@ if ( !class_exists( 'Umamah_Bootstrap_Walker' ) ) {
 *
 * Add Twitter Bootstrap's standard 'active' class name to the active nav link item
 */
-if (!function_exists('umamah_menu_classes')) {
-    function umamah_menu_classes($classes, $item)
+if (!function_exists('trtitan_menu_classes')) {
+    function trtitan_menu_classes($classes, $item)
     {
         if ($item->menu_item_parent == 0 && in_array('current-menu-item', $classes)) {
             $classes[] = "active";
@@ -197,7 +197,7 @@ if (!function_exists('umamah_menu_classes')) {
         return $classes;
     }
 }
-add_filter('nav_menu_css_class', 'umamah_menu_classes', 10, 2);
+add_filter('nav_menu_css_class', 'trtitan_menu_classes', 10, 2);
 
 if (!function_exists('custom_image_resize_dimensions')) {
     function custom_image_resize_dimensions($payload, $orig_w, $orig_h, $dest_w, $dest_h, $crop)

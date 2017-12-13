@@ -7,8 +7,8 @@
  * https://themeredesign.com
  */
 
-if ( ! function_exists( 'youtha_setup' ) ) {
-    function youtha_setup() {
+if ( ! function_exists( 'trtitan_setup' ) ) {
+    function trtitan_setup() {
         load_theme_textdomain( 'youtha', get_template_directory() . '/languages' );
         add_theme_support( 'automatic-feed-links' );
         add_theme_support( 'title-tag' );
@@ -35,21 +35,21 @@ if ( ! function_exists( 'youtha_setup' ) ) {
             'link',
         ) );
 
-        add_theme_support( 'custom-background', apply_filters( 'youtha_custom_background_args', array(
+        add_theme_support( 'custom-background', apply_filters( 'trtitan_custom_background_args', array(
             'default-color' => 'ffffff',
             'default-image' => '',
         ) ) );
     }
 }
-add_action( 'after_setup_theme', 'youtha_setup' );
+add_action( 'after_setup_theme', 'trtitan_setup' );
 
-if ( !function_exists('youtha_content_width')) {
-    function youtha_content_width()
+if ( !function_exists('trtitan_content_width')) {
+    function trtitan_content_width()
     {
-        $GLOBALS['content_width'] = apply_filters('youtha_content_width', 640);
+        $GLOBALS['content_width'] = apply_filters('trtitan_content_width', 640);
     }
 }
-add_action( 'after_setup_theme', 'youtha_content_width', 0 );
+add_action( 'after_setup_theme', 'trtitan_content_width', 0 );
 
 /**
  * Implement the Custom Header feature.

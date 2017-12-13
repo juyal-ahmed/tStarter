@@ -15,14 +15,14 @@ jQuery(document).ready(function() {
         Global Notice initialization
     ---------------------------------------------------------------------------------------
     */
-    umamah_global_notice_js();
+    trtitan_global_notice_js();
 
     /*
     ---------------------------------------------------------------------------------------
         Mobile nav
     ---------------------------------------------------------------------------------------
     */
-    umamah_mobile_nav_init();
+    trtitan_mobile_nav_init();
 
 });
 
@@ -96,40 +96,40 @@ function prettyphoto_initialization() {
     Global Notice initialization
 ---------------------------------------------------------------------------------------
 */
-function umamah_global_notice_js(){
-    if ( jQuery( '.umamah-notice-btn').length > 0 ) {
-        jQuery(document).on('click', '.umamah-notice-btn', function() {
+function trtitan_global_notice_js(){
+    if ( jQuery( '.trtitan-notice-btn').length > 0 ) {
+        jQuery(document).on('click', '.trtitan-notice-btn', function() {
             var $this = jQuery(this);
             $this.toggleClass('closed');
             if ( $this.hasClass('closed') ) {
-                jQuery('body').removeClass('umamah-notice-bar-opened').addClass('umamah-notice-bar-closed');
-                jQuery('#umamah-notice-message').slideUp('slow', function(){
+                jQuery('body').removeClass('trtitan-notice-bar-opened').addClass('trtitan-notice-bar-closed');
+                jQuery('#trtitan-notice-message').slideUp('slow', function(){
                     $this.find('.fa').addClass('fa-rotate-180');
-                    set_umamah_cookie( 'umamah-global-notice-open', 'no', 1 );
+                    set_trtitan_cookie( 'trtitan-global-notice-open', 'no', 1 );
                 });
             } else {
-                jQuery('body').removeClass('umamah-notice-bar-closed').addClass('umamah-notice-bar-opened');
-                jQuery('#umamah-notice-message').slideDown('slow', function(){
+                jQuery('body').removeClass('trtitan-notice-bar-closed').addClass('trtitan-notice-bar-opened');
+                jQuery('#trtitan-notice-message').slideDown('slow', function(){
                     $this.find('.fa').removeClass('fa-rotate-180');
-                    set_umamah_cookie( 'umamah-global-notice-open', 'yes', 1 );
+                    set_trtitan_cookie( 'trtitan-global-notice-open', 'yes', 1 );
                 });
             }
 
             return false;
         });
 
-        var global_notice_prev_state = get_umamah_cookie('umamah-global-notice-open' );
-        var $this = jQuery('.umamah-notice-btn');
+        var global_notice_prev_state = get_trtitan_cookie('trtitan-global-notice-open' );
+        var $this = jQuery('.trtitan-notice-btn');
         if ( global_notice_prev_state == 'yes' ) {
             $this.removeClass('closed');
-            jQuery('body').removeClass('umamah-notice-bar-closed').addClass('umamah-notice-bar-opened');
-            jQuery('#umamah-notice-message').slideDown('slow', function(){
+            jQuery('body').removeClass('trtitan-notice-bar-closed').addClass('trtitan-notice-bar-opened');
+            jQuery('#trtitan-notice-message').slideDown('slow', function(){
                 $this.find('.fa').removeClass('fa-rotate-180');
             });
         } else {
             $this.addClass('closed');
-            jQuery('body').removeClass('umamah-notice-bar-opened').addClass('umamah-notice-bar-closed');
-            jQuery('#umamah-notice-message').slideUp('slow', function(){
+            jQuery('body').removeClass('trtitan-notice-bar-opened').addClass('trtitan-notice-bar-closed');
+            jQuery('#trtitan-notice-message').slideUp('slow', function(){
                 $this.find('.fa').addClass('fa-rotate-180');
             });
         }
@@ -139,7 +139,7 @@ function umamah_global_notice_js(){
 /*
 *   Init mobile nav
 * */
-function umamah_mobile_nav_init() {
+function trtitan_mobile_nav_init() {
     jQuery(document).on('click', '.toggle-mobile-menu', function (e) {
         e.preventDefault();
         jQuery('.mobile-menu').toggleClass('open');

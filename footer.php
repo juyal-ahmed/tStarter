@@ -14,7 +14,7 @@
 </div>
 
 <div id="footer-wrapper" class="mt-60">
-    <div class="container <?php echo umamah_get_site_layouot_css('header_footer'); ?>">
+    <div class="container <?php echo trtitan_get_site_layouot_css('header_footer'); ?>">
         <div class="row">
             <div class="col-lg-12">
 
@@ -65,7 +65,7 @@
 
                     <div class="copyright clearfix">
                         <?php
-                        $footer_copyright_text = '';// umamah_get_option( 'others', 'footer_copyright_text', '' );
+                        $footer_copyright_text = '';// trtitan_get_option( 'others', 'footer_copyright_text', '' );
                         if( !empty( $footer_copyright_text ) ) {
                             echo do_shortcode( $footer_copyright_text );
                         } else {

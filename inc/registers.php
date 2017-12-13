@@ -8,8 +8,8 @@
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-if ( !function_exists("umamah_widgets_init")){
-    function umamah_widgets_init() {
+if ( !function_exists("trtitan_widgets_init")){
+    function trtitan_widgets_init() {
         register_sidebar(array(
             'name' => esc_html__( 'Main Sidebar', TRTHEME_LANG_DOMAIN ),
             'id' => 'main-sidebar',
@@ -69,12 +69,12 @@ if ( !function_exists("umamah_widgets_init")){
             // plugin dependent sidebars
         }
     }
-    add_action( 'widgets_init', 'umamah_widgets_init' );
+    add_action( 'widgets_init', 'trtitan_widgets_init' );
 }
 
 // enqueue all required styles for umamah
-if( !function_exists( "umamah_theme_styles" ) ) {
-    function umamah_theme_styles() {
+if( !function_exists( "trtitan_theme_styles" ) ) {
+    function trtitan_theme_styles() {
         global $wp, $post;
 
         if ( is_admin() ) { return false; }
@@ -96,12 +96,12 @@ if( !function_exists( "umamah_theme_styles" ) ) {
         }
     }
 }
-add_action( 'wp_enqueue_scripts', 'umamah_theme_styles' );
+add_action( 'wp_enqueue_scripts', 'trtitan_theme_styles' );
 
 
 // enqueue all required javascript for umamah
-if( !function_exists( "umamah_theme_js" ) ) {
-    function umamah_theme_js(){
+if( !function_exists( "trtitan_theme_js" ) ) {
+    function trtitan_theme_js(){
         global $wp;
 
         if ( is_admin() ) { return false; }
@@ -116,8 +116,8 @@ if( !function_exists( "umamah_theme_js" ) ) {
             wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.js', array('jquery'), '1.2', true );
             wp_enqueue_script( 'prettyPhoto', get_template_directory_uri() . '/bower_components/jquery-prettyPhoto/js/jquery.prettyPhoto.js', array('jquery'), '1.2', true );
 
-            // wp_enqueue_script( 'youtha-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20120206', true );
-            wp_enqueue_script( 'youtha-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20130115', true );
+            // wp_enqueue_script( 'trtitan-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20120206', true );
+            wp_enqueue_script( 'trtitan-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20130115', true );
             if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
                 wp_enqueue_script( 'comment-reply' );
             }
@@ -130,15 +130,15 @@ if( !function_exists( "umamah_theme_js" ) ) {
         }
     }
 }
-add_action( 'wp_enqueue_scripts', 'umamah_theme_js' );
+add_action( 'wp_enqueue_scripts', 'trtitan_theme_js' );
 
-if( !function_exists( "umamah_theme_admin_js" ) ) {
-    function umamah_theme_admin_js(){
+if( !function_exists( "trtitan_theme_admin_js" ) ) {
+    function trtitan_theme_admin_js(){
         global $wp;
 
         if ( is_admin() ) {
-            wp_enqueue_script( 'umamah-custom-admin-js', get_template_directory_uri() . '/assets/js/admin.js', array('jquery'), '1.3', true ); //Umamah custm javascript
-            wp_localize_script( 'umamah-custom-admin-js', 'Umamah', array(
+            wp_enqueue_script( 'trtitan-custom-admin-js', get_template_directory_uri() . '/assets/js/admin.js', array('jquery'), '1.3', true ); //Umamah custm javascript
+            wp_localize_script( 'trtitan-custom-admin-js', 'Umamah', array(
                 'ajaxurl' => admin_url('admin-ajax.php')
             ));
         }
@@ -146,4 +146,4 @@ if( !function_exists( "umamah_theme_admin_js" ) ) {
         return true;
     }
 }
-add_action( 'admin_enqueue_scripts', 'umamah_theme_admin_js' );
+add_action( 'admin_enqueue_scripts', 'trtitan_theme_admin_js' );

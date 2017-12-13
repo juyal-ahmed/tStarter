@@ -14,7 +14,7 @@ $logo_image = '';
 ?>
 <div id="header-outer">
     <header id="top">
-        <div class="container <?php echo umamah_get_site_layouot_css('header_footer'); ?>">
+        <div class="container <?php echo trtitan_get_site_layouot_css('header_footer'); ?>">
             <div class="row">
                 <div class="col-md-12">
                     <div class="logo-wrapper pull-left">

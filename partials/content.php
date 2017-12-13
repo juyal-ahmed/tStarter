@@ -19,7 +19,7 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php youtha_posted_on(); ?>
+			<?php trtitan_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -45,6 +45,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php youtha_entry_footer(); ?>
+		<?php trtitan_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

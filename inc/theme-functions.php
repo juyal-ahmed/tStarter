@@ -8,7 +8,7 @@
  **/
 
 
-function umamah_get_option($prefix, $field, $default = '')
+function trtitan_get_option($prefix, $field, $default = '')
 {
 	if (!class_exists('TitanFramework')) return false;
 
@@ -18,9 +18,9 @@ function umamah_get_option($prefix, $field, $default = '')
 	return $return ? $return : $default;
 }
 
-function umamah_get_site_layouot_css($layout = 'content')
+function trtitan_get_site_layouot_css($layout = 'content')
 {
-	return umamah_get_option('general', $layout . '_layout', false) ? 'container-wide' : 'container-boxed';
+	return trtitan_get_option('general', $layout . '_layout', false) ? 'container-wide' : 'container-boxed';
 }
 
 /**
@@ -32,12 +32,12 @@ function umamah_get_site_layouot_css($layout = 'content')
  *
  * @return str URL of logo image
  **/
-if (!function_exists('umamah_get_logo_image')) {
-	function umamah_get_logo_image()
+if (!function_exists('trtitan_get_logo_image')) {
+	function trtitan_get_logo_image()
 	{
 		global $post;
-		$logo_image = umamah_get_option('general', 'logo_image');
-		$logo_image_featured = umamah_get_option('general', 'logo_image_featured');
+		$logo_image = trtitan_get_option('general', 'logo_image');
+		$logo_image_featured = trtitan_get_option('general', 'logo_image_featured');
 		if (!empty($logo_image_featured)) {
 			if (is_front_page() && is_home()) {
 				// Default homepage
@@ -67,11 +67,11 @@ if (!function_exists('umamah_get_logo_image')) {
  *
  * @return str URL of post featured image
  **/
-if (!function_exists('umamah_get_header_featured_image')) {
-	function umamah_get_header_featured_image()
+if (!function_exists('trtitan_get_header_featured_image')) {
+	function trtitan_get_header_featured_image()
 	{
 
-		$blog_featured_image = umamah_get_option('blog', 'blog_featured_image', get_template_directory_uri() . '/resources/images/blog-header.jpg');
+		$blog_featured_image = trtitan_get_option('blog', 'blog_featured_image', get_template_directory_uri() . '/resources/images/blog-header.jpg');
 
 		return $blog_featured_image;
 	}
@@ -86,10 +86,10 @@ if (!function_exists('umamah_get_header_featured_image')) {
  *
  * @return str
  **/
-if (!function_exists('umamah_get_header_post_title')) {
-	function umamah_get_header_post_title()
+if (!function_exists('trtitan_get_header_post_title')) {
+	function trtitan_get_header_post_title()
 	{
-		$header_post_title = umamah_get_option('blog', 'blog_index_heading', __('Reach the high with memorable story', TRTHEME_LANG_DOMAIN));
+		$header_post_title = trtitan_get_option('blog', 'blog_index_heading', __('Reach the high with memorable story', TRTHEME_LANG_DOMAIN));
 		return $header_post_title;
 	}
 }
@@ -98,8 +98,8 @@ if (!function_exists('umamah_get_header_post_title')) {
  *
  * Adding Open Graph Content.
  **/
-if (!function_exists('umamah_add_opengraph')) {
-	function umamah_add_opengraph()
+if (!function_exists('trtitan_add_opengraph')) {
+	function trtitan_add_opengraph()
 	{
 		global $post;
 		if (empty($post)) {
@@ -146,7 +146,7 @@ if (!function_exists('umamah_add_opengraph')) {
 	}
 }
 if (!defined('WPSEO_VERSION') && !class_exists('NY_OG_Admin')) {
-	add_action('wp_head', 'umamah_add_opengraph', 5);
+	add_action('wp_head', 'trtitan_add_opengraph', 5);
 }
 
 
@@ -159,14 +159,14 @@ if (!defined('WPSEO_VERSION') && !class_exists('NY_OG_Admin')) {
  *
  * @return str
  **/
-if (!function_exists('umamah_favicon')) {
-	function umamah_favicon()
+if (!function_exists('trtitan_favicon')) {
+	function trtitan_favicon()
 	{
-		$custom_favicon = umamah_get_option('others', 'favicon_url', '');
+		$custom_favicon = trtitan_get_option('others', 'favicon_url', '');
 		?>
 		<!-- FavIcon -->
 		<?php
-		$custom_favicon = umamah_get_option('others', 'favicon_url', '');
+		$custom_favicon = trtitan_get_option('others', 'favicon_url', '');
 		if (!empty($custom_favicon)) { ?>
 			<link rel="shortcut icon" href="<?php echo $custom_favicon; ?>" type="image/x-icon">
 			<link rel="icon" href="<?php echo $custom_favicon; ?>" type="image/x-icon">
@@ -181,8 +181,8 @@ if (!function_exists('umamah_favicon')) {
 		<?php }
 	}
 }
-add_action('wp_head', 'umamah_favicon');
-add_action('admin_head', 'umamah_favicon');
+add_action('wp_head', 'trtitan_favicon');
+add_action('admin_head', 'trtitan_favicon');
 
 
 /**
@@ -194,8 +194,8 @@ add_action('admin_head', 'umamah_favicon');
  *
  * @return str
  **/
-if (!function_exists('umamah_theme_options_custom_css')) {
-	function umamah_theme_options_custom_css()
+if (!function_exists('trtitan_theme_options_custom_css')) {
+	function trtitan_theme_options_custom_css()
 	{
 		global $post;
 		$post_id = get_the_ID();
@@ -208,7 +208,7 @@ if (!function_exists('umamah_theme_options_custom_css')) {
 			Global custom CSS from Theme Option others tab.
 		-----------------------------------------------------------------------------------
 		*/
-		$additional_css = umamah_get_option('others', 'custom_css', '');
+		$additional_css = trtitan_get_option('others', 'custom_css', '');
 		if ($additional_css) {
 			$theme_typography_styles .= $additional_css;
 		}
@@ -272,7 +272,7 @@ if (!function_exists('umamah_theme_options_custom_css')) {
 				foreach ($css_list as $k => $v) {
 					$str = '#umamah' . $v;
 					$css = '';
-					$css = umamah_get_value_by_tag_name($str, '#umamah', '}');
+					$css = trtitan_get_value_by_tag_name($str, '#umamah', '}');
 					if (!empty($css)) {
 						$theme_typography_styles .= '#umamah' . $css . '}';
 					}
@@ -292,7 +292,7 @@ if (!function_exists('umamah_theme_options_custom_css')) {
 		}
 	}
 }
-add_action('wp_enqueue_scripts', 'umamah_theme_options_custom_css', 21);
+add_action('wp_enqueue_scripts', 'trtitan_theme_options_custom_css', 21);
 
 
 /**
@@ -304,16 +304,16 @@ add_action('wp_enqueue_scripts', 'umamah_theme_options_custom_css', 21);
  *
  * @return str
  **/
-if (!function_exists('umamah_footer_analytics')) {
-	function umamah_footer_analytics()
+if (!function_exists('trtitan_footer_analytics')) {
+	function trtitan_footer_analytics()
 	{
-		$google_analytics = umamah_get_option('others', 'google_analytics', '');
+		$google_analytics = trtitan_get_option('others', 'google_analytics', '');
 		if ($google_analytics <> '') {
 			echo stripslashes($google_analytics) . "\n";
 		}
 	}
 }
-add_action('wp_footer', 'umamah_footer_analytics');
+add_action('wp_footer', 'trtitan_footer_analytics');
 
 
 /**
@@ -325,26 +325,26 @@ add_action('wp_footer', 'umamah_footer_analytics');
  *
  * @return str
  **/
-if (!function_exists('umamah_front_notice')) {
-	function umamah_front_notice()
+if (!function_exists('trtitan_front_notice')) {
+	function trtitan_front_notice()
 	{
-		$notice_html = umamah_get_option('others_', 'notice_html', '');
+		$notice_html = trtitan_get_option('others_', 'notice_html', '');
 		ob_start();
 		if (!empty($notice_html)) {
 			?>
-			<div id="umamah-notice-bar" class="umamah-notice">
-				<div id="umamah-notice-message" class="umamah-notice-message">
-					<div class="umamah-notice-message-inner">
+			<div id="trtitan-notice-bar" class="trtitan-notice">
+				<div id="trtitan-notice-message" class="trtitan-notice-message">
+					<div class="trtitan-notice-message-inner">
 						<?php echo $notice_html; ?>
 					</div>
 				</div>
-				<a href="#" class="umamah-notice-btn"><i class="fa fa-angle-up"></i></a>
+				<a href="#" class="trtitan-notice-btn"><i class="fa fa-angle-up"></i></a>
 			</div>
 			<?php
 		}
 		$buffer = ob_get_contents();
 		ob_end_clean();
-		$buffer = apply_filters('umamah_front_notice_filter', $buffer);
+		$buffer = apply_filters('trtitan_front_notice_filter', $buffer);
 
 		echo $buffer;
 	}
@@ -363,8 +363,8 @@ if (!function_exists('umamah_front_notice')) {
  *
  * @return str
  **/
-if (!function_exists('umamah_url')) {
-	function umamah_url($page = '', $echo_a = false, $additional_args = array())
+if (!function_exists('trtitan_url')) {
+	function trtitan_url($page = '', $echo_a = false, $additional_args = array())
 	{
 
 		if (is_multisite())
@@ -382,384 +382,10 @@ if (!function_exists('umamah_url')) {
 
 		if (empty($page)) {
 			$title = __('Home', TRTHEME_LANG_DOMAIN);
-		} else if (!empty($page) && $page == 'login') {
-			$title = __('Login', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'login', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('login');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url = get_page_link($url_page_id, false, false);
-			}
-		} else if (!empty($page) && $page == 'logout') {
-			$url = add_query_arg('umamah-action', 'logout', get_permalink());
-			$title = __('Log Out', TRTHEME_LANG_DOMAIN);
-		} else if (!empty($page) && $page == 'account') {
-			$title = __('Account', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'account', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('account');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url = get_page_link($url_page_id, false, false);
-			}
-		} else if (!empty($page) && $page == 'reset-password-checkemail') {
-			$umamah_login_uri = umamah_url('login');
-			$url = add_query_arg('checkemail', 'confirm', $umamah_login_uri);
-			$title = ''; //Forcing it not to generate the anchor with text and url.
-		} else if (!empty($page) && $page == 'forgot-password') {
-			$title = __('Lost your password?', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'forgot_password', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('forgot-password');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url = get_page_link($url_page_id, false, false);
-			}
-		} else if (!empty($page) && $page == 'login-redirect') {
-			$title = '';
-			$url_page_id = umamah_get_option('pages', 'login_redirect', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('account');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url = get_page_link($url_page_id, false, false);
-			}
-		} else if (!empty($page) && $page == 'reset-password') {
-			$title = __('Reset Password', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'reset_password', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('reset-password');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url = get_page_link($url_page_id, false, false);
-			}
-		} else if (!empty($page) && $page == 'registration') {
-			$title = __('Register here', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'registration', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('registration');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url = get_page_link($url_page_id, false, false);
-			}
-		} else if (!empty($page) && $page == 'checkout') {
-			$title = __('Checkout', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'checkout', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('checkout');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url = get_page_link($url_page_id, false, false);
-			}
-		} else if (!empty($page) && $page == 'payment-success') {
-			$title = __('Payment Success', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('payment', 'success', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('payment-success');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url = get_page_link($url_page_id, false, false);
-			} else {
-				$url = '';
-			}
-		} else if (!empty($page) && $page == 'payment-cancel') {
-			$title = __('Payment Cancel', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('payment', 'cancel', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('payment-cancel');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url = get_page_link($url_page_id, false, false);
-			} else {
-				$url = '';
-			}
-		} else if (!empty($page) && $page == 'add-to-cart') {
-			$url = get_permalink();
-			$title = '';
-			$url_page_id = umamah_get_option('pages', 'checkout', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('checkout');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'themes') {
-			$url = get_permalink();
-			$title = '';
-			$url_page_id = umamah_get_option('themes', 'theme_listing_page1', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('themes');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'plugins') {
-			$url = get_permalink();
-			$title = '';
-			$url_page_id = umamah_get_option('plugin', 'plugin_listing_page1', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('plugins');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'remove-cart-item') {
-			$url = get_permalink();
-			$title = __('Remove', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'checkout', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('checkout');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'articles') {
-			$url = get_permalink();
-			$title = __('Knowledgebase', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'knowledgebase_page_id', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('knowledgebase');
-				$articles_obj = get_page_by_path('articles');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				} else if (!empty($articles_obj) && !empty($articles_obj->ID)) {
-					$url_page_id = $articles_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'tickets') {
-			$url = get_permalink();
-			$title = __('Tickets', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'ticket_page_id', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('tickets');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'submit-a-ticket') {
-			$url = get_permalink();
-			$title = __('Submit A Ticket', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'submit_ticket_page_id', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('submit-a-ticket');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'edit-profile') {
-			$url = get_permalink();
-			$title = __('Edit Profile', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'edit_profile', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('edit-profile');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'download') {
-			$url = get_permalink();
-			$title = __('Download', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'account_download', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('download');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'change-password') {
-			$url = get_permalink();
-			$title = __('Change Password', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'account_change_password', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('change-password');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'download') {
-			$url = get_permalink();
-			$title = __('Download', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'download', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('download');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'subscription') {
-			$url = get_permalink();
-			$title = __('Subscription', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'account_subscription', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('subscription');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'theme-customization') {
-			$url = get_permalink();
-			$title = __('Theme Customization', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'theme_customization', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('theme-customization');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && ($page == 'terms-and-condition' || $page == 'toc')) {
-			$url = get_permalink();
-			$title = __('Terms and Condition', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'toc', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('terms-and-condition');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('toc');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && ($page == 'terms-of-service' || $page == 'tos')) {
-			$url = get_permalink();
-			$title = __('Terms of Service', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'tos', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('terms-and-condition');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('tos');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
 		} else if (!empty($page) && $page == 'contact') {
 			$url = get_permalink();
 			$title = __('Contact', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'contact', 0);
+			$url_page_id = trtitan_get_option('pages', 'contact', 0);
 			if (empty($url_page_id)) {
 				$url_obj = get_page_by_path('contact');
 				if (!empty($url_obj) && !empty($url_obj->ID)) {
@@ -768,70 +394,6 @@ if (!function_exists('umamah_url')) {
 			}
 			if (empty($url_page_id)) {
 				$url_obj = get_page_by_path('contact-us');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'payment-success') {
-			$url = get_permalink();
-			$title = __('Payment Success', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('payment', 'success', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('payment_success');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'payment-cancel') {
-			$url = get_permalink();
-			$title = __('Payment Cancel', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('payment', 'cancel', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('payment_cancel');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'email-payment-success') {
-			$url = get_permalink();
-			$title = __('Payment Success', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('payment', 'email_order_success', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('email-payment-success');
-				if (!empty($url_obj) && !empty($url_obj->ID)) {
-					$url_page_id = $url_obj->ID;
-				}
-			}
-			if (!empty($url_page_id)) {
-				$url_tmp = get_page_link($url_page_id, false, false);
-				if (!empty($url_tmp)) {
-					$url = $url_tmp;
-				}
-			}
-		} else if (!empty($page) && $page == 'support-tickets') {
-			$url = get_permalink();
-			$title = __('Support Tickets', TRTHEME_LANG_DOMAIN);
-			$url_page_id = umamah_get_option('pages', 'support_tickets', 0);
-			if (empty($url_page_id)) {
-				$url_obj = get_page_by_path('support-tickets');
 				if (!empty($url_obj) && !empty($url_obj->ID)) {
 					$url_page_id = $url_obj->ID;
 				}
@@ -909,7 +471,7 @@ if (!function_exists('send_contact_request')) {
 			}
 
 			if (!$contact_has_error) {
-				if (trim($_POST['contact_captcha']) === '' || empty($_SESSION['umamah_contact_captcha']) || $_SESSION['umamah_contact_captcha'] != $_POST['contact_captcha']) {
+				if (trim($_POST['contact_captcha']) === '' || empty($_SESSION['trtitan_contact_captcha']) || $_SESSION['trtitan_contact_captcha'] != $_POST['contact_captcha']) {
 					$contact_error_text = __('Invalid captcha answer.', TRTHEME_LANG_DOMAIN);
 					$contact_has_error = true;
 				}
@@ -931,7 +493,7 @@ if (!function_exists('send_contact_request')) {
 
 		$val1 = rand(1, 10);
 		$val2 = rand(1, 10);
-		$_SESSION['umamah_contact_captcha'] = $val1 + $val2;
+		$_SESSION['trtitan_contact_captcha'] = $val1 + $val2;
 		$contact_captcha_placeholder = "What is $val1 + $val2?";
 
 	}

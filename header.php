@@ -24,8 +24,8 @@
 
 <body <?php body_class(); ?>>
 
-    <?php umamah_front_notice(); ?>
+    <?php trtitan_front_notice(); ?>
 
     <?php get_header('nav'); ?>
 
-    <div id="container" class="container <?php echo umamah_get_site_layouot_css('content'); ?>">
+    <div id="container" class="container <?php echo trtitan_get_site_layouot_css('content'); ?>">
