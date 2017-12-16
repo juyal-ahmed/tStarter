@@ -17,3 +17,7 @@ article.page .entry-content {
 	margin: 0 auto;
 	margin-bottom: 60px;
 }
+
+.home article.page .entry-content {
+	padding-top: 60px;
+}

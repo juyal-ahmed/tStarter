@@ -31,8 +31,12 @@ body {
 	}
 }
 
-p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, .wp-caption, .aligncenter, div.aligncenter, .form-group {
+p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, .wp-caption, .aligncenter, div.aligncenter {
 	margin-bottom: 20px !important;
+}
+
+.form-group {
+	margin-bottom: 30px !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
