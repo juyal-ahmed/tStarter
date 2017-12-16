@@ -7,9 +7,12 @@
  * https://themeredesign.com
  */
 
-require get_template_directory() . '/inc/prefetch/titan-framework-checker.php';
-require get_template_directory() . '/inc/prefetch/const.php';
-require get_template_directory() . '/inc/prefetch/titan.php';
-require get_template_directory() . '/inc/prefetch/metas.php';
-require get_template_directory() . '/inc/prefetch/options.php';
-require get_template_directory() . '/inc/prefetch/customizer.php';
+include_once get_template_directory() . '/inc/prefetch/titan-framework-checker.php';
+include_once get_template_directory() . '/inc/prefetch/const.php';
+include_once get_template_directory() . '/inc/prefetch/titan.php';
+include_once get_template_directory() . '/inc/prefetch/metas.php';
+include_once get_template_directory() . '/inc/prefetch/options.php';
+include_once get_template_directory() . '/inc/prefetch/customizer.php';
+if (is_admin()) {
+	include_once get_template_directory() . '/inc/importer/importer.inc.php';
+}
