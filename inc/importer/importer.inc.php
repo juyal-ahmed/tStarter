@@ -6,7 +6,7 @@ function trtitan_add_demo_importer() {
 
 function trtitan_demo_importer_page() {
 	global $trtitan_demo_importer_selfcheck, $trtitan_demo_importer_success;
-	
+
 	echo '<div class="wrap"><h1>'.esc_html__('Demo Content Importer', TRTHEME_LANG_DOMAIN).'</h1>';
 
 	if (empty($_POST['trtitan_importing'])) {
