@@ -1,0 +1,8 @@
+INSERT INTO `wp_options` (`option_name`, `option_value`, `autoload`) VALUES
+('test1', 'http://localhost/product/titan-tr-starter', 'yes'),
+('test2', 'http://localhost/product/titan-tr-starter', 'yes');
+<import_sep>
+INSERT INTO `wp_options` (`option_name`, `option_value`, `autoload`) VALUES
+('test3', 'http://localhost/product/titan-tr-starter', 'yes'),
+('test4', 'http://localhost/product/titan-tr-starter', 'yes');
+
