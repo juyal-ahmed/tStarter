@@ -3,10 +3,10 @@
 *
 * Template Name: Archives
 * Description: This template can use to create archive page.
-*                                                      
+*
 * @author Juyal Ahmed<tojibon@gmail.com>
 * @version: 1.0.0
-* https://themeredesign.com
+* https://themeana.com
 */
 
 

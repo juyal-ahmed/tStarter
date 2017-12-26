@@ -4,7 +4,7 @@
  *
  * @author Juyal Ahmed<tojibon@gmail.com>
  * @version: 1.0.0
- * https://themeredesign.com
+ * https://themeana.com
  */
 
 if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {

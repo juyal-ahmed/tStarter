@@ -1,13 +1,13 @@
 <?php
 /**
-* 
+*
 * This file contains the chat contents for posts
 *
 * @author Juyal Ahmed<tojibon@gmail.com>
 * @version: 1.0.0
-* https://themeredesign.com
+* https://themeana.com
 */
-?>  
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-item' ); ?> role="article">
     <?php get_template_part( 'partials/article-post', 'slider' ); ?>
     <section class="article-content">
@@ -15,9 +15,9 @@
         <?php get_template_part( 'formats/content-with', 'footer' );  ?>
     </section>
     <?php get_template_part( 'partials/block', 'blog-navigation' );  ?>
-    <?php 
+    <?php
     if( is_singular() ) {
         get_template_part( 'partials/content', 'comment-form' );
     }
-    ?>  
-</article> 
+    ?>
+</article>

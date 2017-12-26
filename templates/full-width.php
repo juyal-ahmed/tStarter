@@ -3,10 +3,10 @@
 *
 * Template Name: Full Width
 * Description: This template can use to create full width page.
-*                                                      
+*
 * @author Juyal Ahmed<tojibon@gmail.com>
 * @version: 1.0.0
-* https://themeredesign.com
+* https://themeana.com
 */
 
 get_header(); ?>

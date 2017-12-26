@@ -4,7 +4,7 @@
  *
  * @author Juyal Ahmed<tojibon@gmail.com>
  * @version: 1.0.0
- * https://themeredesign.com
+ * https://themeana.com
  */
 
 require_once( dirname( __FILE__ ) . '/theme-customizers.php' );

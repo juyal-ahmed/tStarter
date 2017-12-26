@@ -1,13 +1,13 @@
 <?php
 /**
-* 
+*
 * This file contains the standard contents for posts
 *
 * @author Juyal Ahmed<tojibon@gmail.com>
 * @version: 1.0.0
-* https://themeredesign.com
+* https://themeana.com
 */
-?>  
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <div class="article-content-wrap">
@@ -17,9 +17,9 @@
         </section>
         <?php get_template_part( 'partials/block', 'blog-navigation' );  ?>
     </div>
-	<?php 
+	<?php
 	if( is_singular() ) {
 		get_template_part( 'partials/content', 'comment-form' );
 	}
-	?>  
-</article> 
+	?>
+</article>
