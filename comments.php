@@ -236,7 +236,8 @@ if (comments_open()) : ?>
                                 <div class="form-group comment-instruction">
                                     <div class="col-sm-offset-3 col-sm-9 col-xs-12">
                                         <h4><?php _e('Rules of the Blog', TRTHEME_LANG_DOMAIN); ?></h4>
-                                        <p><?php _e('Do not post violating content, tags like bold, italic and underline are allowed that means HTML can be used while commenting.', TRTHEME_LANG_DOMAIN); ?></p>
+                                        <!--<p><?php /*_e('Do not post violating content, tags like bold, italic and underline are allowed that means HTML can be used while commenting.', TRTHEME_LANG_DOMAIN); */?></p>-->
+										<p class="form-allowed-tags" id="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; </code></p>
                                     </div>
                                 </div>
                                 <?php

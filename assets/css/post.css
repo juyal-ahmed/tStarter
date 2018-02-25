@@ -18,6 +18,10 @@ article.post .entry-content {
 	margin-bottom: 60px;
 }
 
+article.post .entry-content p:last-child {
+	margin-bottom: 0 !important;
+}
+
 article.post .featured-image {
 	position: relative;
 }

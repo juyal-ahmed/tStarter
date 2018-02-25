@@ -47,7 +47,7 @@ $logo_image = '';
                     <nav class="mobile-menu">
                         <ul>
                             <?php
-                            if( has_nav_menu( 'primary' ) ) {
+                            if( has_nav_menu( 'primary' ) && is_nav_menu_item('primary') ) {
                                 wp_nav_menu( array('walker' => new Umamah_Arrow_Walker_Nav_Menu, 'theme_location' => 'primary', 'container' => '', 'items_wrap' => '%3$s' ) );
                             } else {
                                 echo '<li><a href="">No menu assigned!</a></li>';

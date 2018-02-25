@@ -23,8 +23,17 @@
 .sidebar .widget_search {
 }
 
+.sidebar .search-form,
+.sidebar .search-form .form-group {
+	margin-bottom: 0 !important;
+}
+
 .sidebar .widget:last-child {
-    margin-bottom: 60px;
+	margin-bottom: 0;
+}
+
+.page-template-left-sidebar .sidebar .widget:last-child {
+	margin-bottom: 40px;
 }
 
 .widget {

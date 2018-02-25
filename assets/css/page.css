@@ -1,7 +1,17 @@
 article.page {
 	background: #ffffff;
 	padding-bottom: 60px;
-	margin-bottom: 60px;
+}
+
+@media (max-width: 992px) {
+	article.page {
+		margin-bottom: 60px;
+	}
+	.home article.page,
+	.page-template-full-width article.page,
+	.page-template-archive article.page {
+		margin-bottom: 0;
+	}
 }
 
 article.page .entry-header {
@@ -15,7 +25,7 @@ article.page .entry-content {
 	width: 80%;
 	display: block;
 	margin: 0 auto;
-	margin-bottom: 60px;
+	/*margin-bottom: 60px;*/
 }
 
 .home article.page .entry-content {

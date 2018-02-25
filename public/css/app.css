@@ -941,15 +941,25 @@ object, object embed {
 	max-width: 100% !important;
 }
 
-code {
-	display: block;
-	clear: both;
-	overflow: auto;
+blockquote {
+	margin: 0 1.5em 1.5em 0;
+	margin: 0 1.5em 0 0;
 	padding: 20px;
-	white-space: pre;
-	background-color: #f9f9f9;
-	color: #579BC4;
+	border-left: 5px solid #25292c !important;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0 !important;
+}
+
+code {
 	font: 12px "Andale Mono", Courier, "Courier New", monospace;
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+	color: #333;
+	background-color: #f5f5f5;
+	border-radius: 4px;
 }
 
 .entry-header {
@@ -1241,7 +1251,7 @@ https://codepen.io/connorbrassington/pen/raNrEW
 .primary-menu ul {
     background: #fff;
     padding-left: 0;
-    margin: 0;
+    margin: 0 !important;
     font-size: 0;
     list-style-type: none;
 }
@@ -1461,8 +1471,17 @@ https://codepen.io/connorbrassington/pen/raNrEW
 .sidebar .widget_search {
 }
 
+.sidebar .search-form,
+.sidebar .search-form .form-group {
+	margin-bottom: 0 !important;
+}
+
 .sidebar .widget:last-child {
-    margin-bottom: 60px;
+	margin-bottom: 0;
+}
+
+.page-template-left-sidebar .sidebar .widget:last-child {
+	margin-bottom: 40px;
 }
 
 .widget {
@@ -1807,7 +1826,17 @@ ol.commentlist li.thread-odd {
 article.page {
 	background: #ffffff;
 	padding-bottom: 60px;
-	margin-bottom: 60px;
+}
+
+@media (max-width: 992px) {
+	article.page {
+		margin-bottom: 60px;
+	}
+	.home article.page,
+	.page-template-full-width article.page,
+	.page-template-archive article.page {
+		margin-bottom: 0;
+	}
 }
 
 article.page .entry-header {
@@ -1821,7 +1850,7 @@ article.page .entry-content {
 	width: 80%;
 	display: block;
 	margin: 0 auto;
-	margin-bottom: 60px;
+	/*margin-bottom: 60px;*/
 }
 
 .home article.page .entry-content {
@@ -1845,6 +1874,10 @@ article.post .entry-content {
 	display: block;
 	margin: 0 auto;
 	margin-bottom: 60px;
+}
+
+article.post .entry-content p:last-child {
+	margin-bottom: 0 !important;
 }
 
 article.post .featured-image {
