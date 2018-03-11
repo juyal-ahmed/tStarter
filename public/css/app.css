@@ -1588,7 +1588,7 @@ https://codepen.io/connorbrassington/pen/raNrEW
 #wp-calendar tfoot #prev { font-size: 10px; text-transform: uppercase; padding-top: 10px; }
 #footer-wrapper {
     background: #262626;
-    padding: 85px 0px;
+    padding: 35px 0px;
     color: #767676;
 }
 
@@ -1627,7 +1627,8 @@ https://codepen.io/connorbrassington/pen/raNrEW
 
 .footer-sidebars-widgets-inner {
     margin-bottom: 30px;
-}ol.commentlist {
+}
+ol.commentlist {
 	list-style: none;
 	margin: 0 0 1em;
 	padding: 0;
